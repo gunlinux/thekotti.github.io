@@ -1,0 +1,14 @@
+body {
+	background-color:#FFFFFF;
+	background-image:url("hitmanbg.jpg");
+	background-position:50px 150px;
+	background-repeat:no-repeat;
+}
+
+.genericextras {
+	color:blue;
+}
+
+.missionextras {
+	color:red;
+}
