@@ -12,6 +12,7 @@
 		<br><br>
 		<form>
 			<select id="missionselect">
+				<option value="RANDOM">Random Mission</option>
 				<option value="AVY">A Vintage Year</option>
 				<option value="CD">Curtains Down</option>
 				<option value="FL">Flatline</option>
@@ -24,9 +25,10 @@
 				<option value="ADWTD">A Dance with the Devil</option>
 				<option value="AXXV">Amendment XXV</option>
 			</select>
-			<button type="button" style="display:inline" onclick="extraVariables(),chooseMission(),difficultyCalc()">Make it go</button>
+			<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission(),difficultyCalc()">Make it go</button>
 			<p id="difficulty" style="display:inline"></p>
 		</form>
+		<p id="chosenmission"></p>
 		<p id="mainresult"></p>
 		<p id="extra1" class="missionextras"></p>
 		<p id="extra2" class="missionextras"></p>
@@ -37,10 +39,10 @@
 		<p id="distractionsextra" class="genericextras"></p>
 		<p id="knockoutsextra" class="genericextras"></p>
 		<p id="suitonlyextra" class="genericextras"></p>
-		<br>
+
 		
 		
-		<script src="/js/roulette.js"></script>
+		<script src="Roulette.js"></script>
 
 	</body>
 </html> 
