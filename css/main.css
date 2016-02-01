@@ -5,3 +5,9 @@
 .missionextras {
 	color:red;
 }
+
+#chosenmission {
+	font-size:18px;
+	font-weight: bold;
+	color:#cc0000;
+}
