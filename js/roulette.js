@@ -356,3 +356,15 @@ if (document.getElementById("chosenmission").textContent === "A New Life") {
 	if ((mainObjective.toLowerCase().indexOf("exit through the front") >= 0) && (shot.toLowerCase().indexOf("shot") >= 0) && (SO.toLowerCase().indexOf("disg") >= 0) && (dist.toLowerCase().indexOf("dist") >= 0) && (KO.toLowerCase().indexOf("knock") >= 0)){
 		totalValue += 5.0;
 	};
+
+
+
+
+
+} /*anl loppu*/
+
+document.getElementById("difficulty").innerHTML = ("Estimated difficulty: " + totalValue.toFixed(1));
+};
+
+
+
