@@ -1,3 +1,13 @@
+function clearAll() {
+	document.getElementById("mainresult").innerHTML = ("");
+	document.getElementById("extra1").innerHTML = ("");
+	document.getElementById("extra2").innerHTML = ("");
+	document.getElementById("extra3").innerHTML = ("");	
+	document.getElementById("extra4").innerHTML = ("");	
+	document.getElementById("extra5").innerHTML = ("");	
+	document.getElementById("chosenmission").innerHTML = ("");	
+};
+
 function extraVariables() {
 
 
@@ -28,25 +38,45 @@ if (Math.random() <= 0.30) {
 };
 
 function chooseMission() {
-	var mission = document.getElementById("missionselect").selectedIndex;
-	if ((document.getElementsByTagName("option")[mission].value) === "ANL") {
-		fullANL();
-	} else if ((document.getElementsByTagName("option")[mission].value) === "TDDUP"){
-		fullTDDUP();
-	} else if ((document.getElementsByTagName("option")[mission].value) === "CD") {
-		fullCD();
-	} else if ((document.getElementsByTagName("option")[mission].value) === "AVY") {
+
+var mission = document.getElementById("missionselect").selectedIndex;
+var missionList = [fullAVY,fullCD,fullFL,fullANL,fullTMOC,fullYBWO,fullDOTM,fullTDDUP,fullAHOC,fullADWTD,fullAXXV];
+
+	if ((document.getElementsByTagName("option")[mission].value) === "AVY") {
 		fullAVY();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "CD"){
+		fullCD();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "FL") {
+		fullFL();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "ANL") {
+		fullANL();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "TMOC") {
+		fullTMOC();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "YBWO") {
+		fullYBWO();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "DOTM") {
+		fullDOTM();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "TDDUP") {
+		fullTDDUP();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "AHOC") {
+		fullAHOC();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "ADWTD") {
+		fullADWTD();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "AXXV") {
 		fullAXXV();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "RANDOM") {
+		randomlyChosenMission = missionList[Math.floor(Math.random()*missionList.length)];
+		randomlyChosenMission();
 	} else {
-		document.getElementById("mainresult").innerHTML = ("Selected mission is not ready for randomizing.");
+		document.getElementById("mainresult").innerHTML = ("Something seems to have gone wrong. Choose another mission and how something goes right.");
 	};
 
 };
 
-function fullAVY() {
+//Missions
 
+function fullAVY() {
+document.getElementById("chosenmission").innerHTML = ("A Vintage Year")
 //AVY starts, kills and exits
 
 var entryAVY = ["Left from the beginning","Right from the beginning","Through the party to the cellar","Through the party to the main building"];
@@ -60,16 +90,16 @@ document.getElementById("mainresult").innerHTML = ("Start by heading " + entryAV
 	
 //AVY extra variables
 	
-if (Math.random() <= 0.49) {
+if (Math.random() <= 0.34) {
 	document.getElementById("extra1").innerHTML = ("Kill Manuel first.");
 } else {
 	document.getElementById("extra1").innerHTML = ("Kill Don Fernando first.");
 };
-	
+
 };
 
 function fullCD() {
-
+document.getElementById("chosenmission").innerHTML = ("Curtains Down")
 //CD starts and kills
 
 var entryCD = ["Left and down the stairs","Through the opera hall","Right of the hall and down the stairs"];
@@ -95,8 +125,13 @@ if (Math.random() <= 0.20) {
 
 };
 
-function fullANL() {
+function fullFL() {
+document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
+document.getElementById("chosenmission").innerHTML = ("Flatline")
+}
 
+function fullANL() {
+document.getElementById("chosenmission").innerHTML = ("A New Life")
 //ANL entrances, exits and kills
 
 var entryANL = ["Garage","Basement","Front door","Backyard"];
@@ -117,8 +152,39 @@ if (Math.random() <= 0.15) {
 
 };
 
-function fullTDDUP() {
+function fullTMOC() {
+document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
+document.getElementById("chosenmission").innerHTML = ("The Murder of Crows")
+}
 
+function fullYBWO() {
+document.getElementById("chosenmission").innerHTML = ("You Better Watch Out")
+var entryYBWO = ["Guest elevator","Staff elevator"];
+var topFloor = ["Elevator","Staircase"];
+var killYBWO = ["Fiber wire","RU-AP mine","Gun","gravity","jacuzzi","kitchen knife"];
+
+if (Math.random() <= 0.69) {
+	exitYBWO = "helicopter."
+} else {
+	exitYBWO = "boat."
+}
+
+document.getElementById("mainresult").innerHTML = ("Use the " + entryYBWO[Math.floor(Math.random()*entryYBWO.length)].toUpperCase().fontcolor("red") + 
+" to reach the main floor and the " + topFloor[Math.floor(Math.random()*topFloor.length)].toUpperCase().fontcolor("red") + 
+" to reach the top floor. Kill Chad using the " + killYBWO[Math.floor(Math.random()*killYBWO.length)].toUpperCase().fontcolor("red") + 
+" and Lorne using the " + killYBWO[Math.floor(Math.random()*killYBWO.length)].toUpperCase().fontcolor("red") + 
+". Exit using the " + exitYBWO.toUpperCase().fontcolor("red"));
+
+
+};
+
+function fullDOTM() {
+document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
+document.getElementById("chosenmission").innerHTML = ("Death on the Mississippi")
+}
+
+function fullTDDUP() {
+document.getElementById("chosenmission").innerHTML = ("Till Death Do Us Part")
 //TDDUP entrances, exits and kills
 var entryTDDUP = ["Left Door","Main Door","Right Door"];
 var killTDDUP = ["Fiber Wire","RU-AP Mine","Gun","Gravity","Swamp","Shovel","Chandelier"];
@@ -145,8 +211,21 @@ if (Math.random() <= 0.30) {
 
 };
 
-function fullAXXV() {
+function fullAHOC() {
+document.getElementById("chosenmission").innerHTML = ("A House of Cards")
+document.getElementById("mainresult").innerHTML = "lmao play some other mission this is literally 5 minutes of waiting and not fun";
 
+document.getElementById("extra1").innerHTML = "for real though I'll get back to this later probably the last mission I'll do";
+
+};
+
+function fullADWTD(){
+document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
+document.getElementById("chosenmission").innerHTML = ("A Dance with the Devil")
+}
+
+function fullAXXV() {
+document.getElementById("chosenmission").innerHTML = ("Amendment XXV")
 //AXXV main variables
 
 var firstHalf = ["The roof","The hallway"];
@@ -186,6 +265,8 @@ if (Math.random() <= 0.10) {
 
 }
 
+//oh god what this was a terrible idea
+
 function difficultyCalc() {
 
 var totalValue = 0;
@@ -198,7 +279,7 @@ var KO = (document.getElementById("knockoutsextra").textContent);
 var SO = (document.getElementById("suitonlyextra").textContent);
 
 //ANL
-if ((document.getElementsByTagName("option")[missionNumber].value) === "ANL") {
+if (document.getElementById("chosenmission").textContent === "A New Life") {
 	var wife = (document.getElementById("extra1").textContent);
 	/*kills*/
 	if (mainObjective.toLowerCase().indexOf("kitchen knife") >= 0) {
@@ -275,12 +356,3 @@ if ((document.getElementsByTagName("option")[missionNumber].value) === "ANL") {
 	if ((mainObjective.toLowerCase().indexOf("exit through the front") >= 0) && (shot.toLowerCase().indexOf("shot") >= 0) && (SO.toLowerCase().indexOf("disg") >= 0) && (dist.toLowerCase().indexOf("dist") >= 0) && (KO.toLowerCase().indexOf("knock") >= 0)){
 		totalValue += 5.0;
 	};
-
-
-
-
-
-} /*anl loppu*/
-
-document.getElementById("difficulty").innerHTML = ("Estimated difficulty: " + totalValue.toFixed(1));
-};
