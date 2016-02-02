@@ -40,7 +40,7 @@ if (Math.random() <= 0.30) {
 function chooseMission() {
 
 var mission = document.getElementById("missionselect").selectedIndex;
-var missionList = [fullAVY,fullCD,fullFL,fullANL,fullTMOC,fullYBWO,fullDOTM,fullTDDUP,fullAHOC,fullADWTD,fullAXXV];
+var missionList = [fullAVY,fullCD,fullANL,fullYBWO,fullTDDUP,fullADWTD,fullAXXV];
 
 	if ((document.getElementsByTagName("option")[mission].value) === "AVY") {
 		fullAVY();
@@ -68,7 +68,7 @@ var missionList = [fullAVY,fullCD,fullFL,fullANL,fullTMOC,fullYBWO,fullDOTM,full
 		randomlyChosenMission = missionList[Math.floor(Math.random()*missionList.length)];
 		randomlyChosenMission();
 	} else {
-		document.getElementById("mainresult").innerHTML = ("Something seems to have gone wrong. Choose another mission and how something goes right.");
+		document.getElementById("mainresult").innerHTML = ("Something seems to have gone wrong. Choose another mission and hope something goes right.");
 	};
 
 };
@@ -162,6 +162,7 @@ document.getElementById("chosenmission").innerHTML = ("You Better Watch Out")
 var entryYBWO = ["Guest elevator","Staff elevator"];
 var topFloor = ["Elevator","Staircase"];
 var killYBWO = ["Fiber wire","RU-AP mine","Gun","gravity","jacuzzi","kitchen knife"];
+var killOrder = Math.random();
 
 if (Math.random() <= 0.69) {
 	exitYBWO = "helicopter."
@@ -175,6 +176,25 @@ document.getElementById("mainresult").innerHTML = ("Use the " + entryYBWO[Math.f
 " and Lorne using the " + killYBWO[Math.floor(Math.random()*killYBWO.length)].toUpperCase().fontcolor("red") + 
 ". Exit using the " + exitYBWO.toUpperCase().fontcolor("red"));
 
+if (killOrder <= 0.19) {
+	document.getElementById("extra1").innerHTML = ("Kill Chad first.");
+} else if (killOrder <= 0.39) {
+	document.getElementById("extra1").innerHTML = ("Kill Lorne first.");
+} else {
+	document.getElementById("extra1").innerHTML = ("");
+};
+
+if (Math.random() <= 0.19) {
+	document.getElementById("extra2").innerHTML = ("Kill the female assassin.");
+} else {
+	document.getElementById("extra2").innerHTML = ("");
+}
+
+if (Math.random() <= 0.19) {
+	document.getElementById("extra3").innerHTML = ("The dog must survive.");
+} else {
+	document.getElementById("extra3").innerHTML = ("");
+}
 
 };
 
@@ -222,6 +242,24 @@ document.getElementById("extra1").innerHTML = "for real though I'll get back to 
 function fullADWTD(){
 document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
 document.getElementById("chosenmission").innerHTML = ("A Dance with the Devil")
+
+var danceStart = ["Heaven party","Hell party"]
+var danceKill = ["Fiber wire","RU-AP mine","Gun","Accidents","Meat Cleaver","Stiletto","Cane sword"]
+
+document.getElementById("mainresult").innerHTML = ("Visit the " + danceStart[Math.floor(Math.random()*danceStart.length)].toUpperCase().fontcolor("red") + 
+" first and kill the targets using the following weapons:<br><br>Martinez: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red") +
+"<br>Vaana: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red") +
+"<br>Maynard John: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red") +
+"<br>Eve: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red"))
+
+if (Math.random() <= 0.10) {
+	document.getElementById("extra1").innerHTML=("Steal the video tape.");
+} else {
+	document.getElementById("extra1").innerHTML=("");
+};
+
+
+
 }
 
 function fullAXXV() {
@@ -362,9 +400,36 @@ if (document.getElementById("chosenmission").textContent === "A New Life") {
 
 
 } /*anl loppu*/
-
-document.getElementById("difficulty").innerHTML = ("Estimated difficulty: " + totalValue.toFixed(1));
+if (totalValue === 0) {
+	document.getElementById("difficulty").innerHTML = ("");
+} else {
+	document.getElementById("difficulty").innerHTML = ("Estimated difficulty: " + totalValue.toFixed(1));
+}
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Blood Money roulette</title>
-		<link href="/css/main.css" rel="stylesheet" type="text/css" />
+	<head lang="en">
+		<title>Blood Money Roulette</title>
+		<link rel="stylesheet" href="/main.css" type="text/css">
+		<meta charset="utf-8">		
 	</head>
-
+	
 	<body>
-		<h1>Hitman Blood Money Strat Roulette 0.04</h1>
-		<h5>Custom randomization ready for AVY, CD, ANL, YBWO, TDDUP and AXXV. Difficulty estimate ready for ANL.</h5>
-		<a href="https://docs.google.com/forms/d/1SOIhbngUdcsawr0nSbK0tAI--vse7TXV0pxvKFnMHTs/viewform?usp=send_form" target="_blank">Feedback form</a>
-		<br><br>
-		<form>
-			<select id="missionselect">
-				<option value="RANDOM">Random Mission</option>
-				<option value="AVY">A Vintage Year</option>
-				<option value="CD">Curtains Down</option>
-				<option value="FL">Flatline</option>
-				<option value="ANL">A New Life</option>
-				<option value="TMOC">The Murder of Crows</option>
-				<option value="YBWO">You Better Watch Out...</option>
-				<option value="DOTM">Death on the Mississippi</option>
-				<option value="TDDUP">Till Death Do Us Part</option>
-				<option value="AHOC">A House of Cards</option>
-				<option value="ADWTD">A Dance with the Devil</option>
-				<option value="AXXV">Amendment XXV</option>
-			</select>
-			<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission(),difficultyCalc()">Make it go</button>
-			<p id="difficulty" style="display:inline"></p>
-		</form>
-		<p id="chosenmission"></p>
-		<p id="mainresult"></p>
-		<p id="extra1" class="missionextras"></p>
-		<p id="extra2" class="missionextras"></p>
-		<p id="extra3" class="missionextras"></p>
-		<p id="extra4" class="missionextras"></p>
-		<p id="extra5" class="missionextras"></p>
-		<p id="getshotextra" class="genericextras"></p>
-		<p id="distractionsextra" class="genericextras"></p>
-		<p id="knockoutsextra" class="genericextras"></p>
-		<p id="suitonlyextra" class="genericextras"></p>
+		<header>
+			<h1>Hitman Blood Money Roulette</h1>
+		</header>
+		
+		<nav>
+			<a href="roulette.html">Roulette</a><br>
+			<a href="about.html">About</a>
+		</nav>
+	
+		<section id="roulettesection">
+			<p>Custom randomization ready for AVY, CD, ANL, YBWO, TDDUP, ADWTD and AXXV. <br>Difficulty estimation ready for ANL.</p>
+			<form>
+				<select id="missionselect">
+					<option value="RANDOM">Random Mission</option>
+					<option value="AVY">A Vintage Year</option>
+					<option value="CD">Curtains Down</option>
+					<option value="FL">Flatline</option>
+					<option value="ANL">A New Life</option>
+					<option value="TMOC">The Murder of Crows</option>
+					<option value="YBWO">You Better Watch Out...</option>
+					<option value="DOTM">Death on the Mississippi</option>
+					<option value="TDDUP">Till Death Do Us Part</option>
+					<option value="AHOC">A House of Cards</option>
+					<option value="ADWTD">A Dance with the Devil</option>
+					<option value="AXXV">Amendment XXV</option>
+				</select>
+				<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission(),difficultyCalc()">Make it go</button>
+				<p id="difficulty" style="display:inline"></p>
+			</form>
+				<p id="chosenmission"></p>
+				<p id="mainresult"></p>
+				<p id="extra1" class="missionextras"></p>
+				<p id="extra2" class="missionextras"></p>
+				<p id="extra3" class="missionextras"></p>
+				<p id="extra4" class="missionextras"></p>
+				<p id="extra5" class="missionextras"></p>
+				<p id="getshotextra" class="genericextras"></p>
+				<p id="distractionsextra" class="genericextras"></p>
+				<p id="knockoutsextra" class="genericextras"></p>
+				<p id="suitonlyextra" class="genericextras"></p>
 
+				<script src="/roulette.js"></script>
+		</section>
+		
+		<footer>
+			<p>By <a href="https://twitter.com/TheKotti">Kotti</a></p>
+		</footer>
 		
 		
-		<script src="/js/roulette.js"></script>
-
 	</body>
-</html> 
+</html>

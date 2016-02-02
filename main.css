@@ -1,0 +1,92 @@
+body {
+	margin-left:20px;
+	border:1px black solid;
+	width:900px;
+}
+
+* {
+	font-family:sans-serif;
+}
+
+header {
+	border:1px black solid;
+	padding-left:15px;
+	background-color:black;
+	color:white;
+	font-family:sans-serif;
+}
+
+nav {
+	width:100px;
+	line-height:40px;
+	float:left;
+	padding-left:10px;
+	padding-top:20px;
+}
+
+section {
+	float:left;
+	border-left:1px black solid;
+	padding-left:20px;
+	padding-right:25px;
+	padding-top:10px;
+	padding-bottom:50px;
+	width:725px;
+}
+
+footer {
+	clear:both;
+	border:1px black solid;
+	padding-left:15px;
+	background-color:black;
+	color:white;
+	font-family:sans-serif;
+	text-align:center;
+}
+
+nav a {
+	text-decoration:none;
+	font-size:20px;
+	color:#cc0000;
+}
+
+footer a {
+	color:#0066cc;
+}
+
+section h3 {
+	color:#cc0000;
+}
+
+#changelog {
+	list-style-type:none;
+}
+
+.versionnumber {
+	font-weight:bold;
+}
+
+.linkki {
+	color:#0099ff;
+	font-weight:bold;
+}
+
+/*For roulette page*/
+
+#roulettesection {
+	height:600px;
+}
+
+.genericextras {
+	color:blue;
+}
+
+.missionextras {
+	color:red;
+}
+
+#chosenmission {
+	font-size:18px;
+	font-weight: bold;
+	color:#cc0000;
+}
