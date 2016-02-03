@@ -5,42 +5,56 @@ function clearAll() {
 	document.getElementById("extra3").innerHTML = ("");	
 	document.getElementById("extra4").innerHTML = ("");	
 	document.getElementById("extra5").innerHTML = ("");	
+	document.getElementById("getshotextra").innerHTML = ("");	
+	document.getElementById("distractionsextra").innerHTML = ("");	
+	document.getElementById("knockoutsextra").innerHTML = ("");	
+	document.getElementById("suitonlyextra").innerHTML = ("");	
 	document.getElementById("chosenmission").innerHTML = ("");	
 };
+
+function shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
 
 function extraVariables() {
 
 
 if (Math.random() <= 0.30) {
     document.getElementById("getshotextra").innerHTML=("Do not get shot at by the guards. ");
-} else {
-	document.getElementById("getshotextra").innerHTML=("");
-}
+};
 
 if (Math.random() <= 0.30) {
     document.getElementById("distractionsextra").innerHTML=("Do not use gunshots or explosives as distractions. ");
-} else {
-	document.getElementById("distractionsextra").innerHTML=("");
-}
+};
 
 if (Math.random() <= 0.30) {
 	document.getElementById("knockoutsextra").innerHTML=("Do not use any unnecessary knockouts or accidents. ");
-} else {
-	document.getElementById("knockoutsextra").innerHTML=("");
-}
+};
 
 if (Math.random() <= 0.30) {
 	document.getElementById("suitonlyextra").innerHTML=("Do not use any disguises. ");
-} else {
-	document.getElementById("suitonlyextra").innerHTML=("");
-}
+};
 
 };
 
 function chooseMission() {
 
 var mission = document.getElementById("missionselect").selectedIndex;
-var missionList = [fullAVY,fullCD,fullANL,fullYBWO,fullTDDUP,fullADWTD,fullAXXV];
+var missionList = [fullAVY,fullCD,fullFL,fullANL,fullTMOC,fullYBWO,fullDOTM,fullTDDUP,fullAHOC,fullADWTD,fullAXXV];
 
 	if ((document.getElementsByTagName("option")[mission].value) === "AVY") {
 		fullAVY();
@@ -79,22 +93,20 @@ function fullAVY() {
 document.getElementById("chosenmission").innerHTML = ("A Vintage Year")
 //AVY starts, kills and exits
 
-var entryAVY = ["Left from the beginning","Right from the beginning","Through the party to the cellar","Through the party to the main building"];
+var entryAVY = ["left from the beginning","right from the beginning","through the party to the cellar","through the party to the main building"];
 var killAVY = ["Fiber wire","RU-AP mine","Gun","Gravity","Falling object","Water/Wine","Kitchen knife","Hammer","Fire extinguisher"];
-var exitAVY = ["Cliffside path","Elevator"];
+var exitAVY = ["cliffside path","elevator"];
+var targetsAVY = ["Manuel"]
 
-document.getElementById("mainresult").innerHTML = ("Start by heading " + entryAVY[Math.floor(Math.random()*entryAVY.length)].toUpperCase().fontcolor("red") + 
-". Kill Manuel using the " + killAVY[Math.floor(Math.random()*killAVY.length)].toUpperCase().fontcolor("red") + 
-" and Don Fernando using the " + killAVY[Math.floor(Math.random()*killAVY.length)].toUpperCase().fontcolor("red") + 
-". Use the " + exitAVY[Math.floor(Math.random()*exitAVY.length)].toUpperCase().fontcolor("red") + " to reach the exit.");
-	
-//AVY extra variables
-	
-if (Math.random() <= 0.34) {
-	document.getElementById("extra1").innerHTML = ("Kill Manuel first.");
+if (Math.random() <= 0.49) {
+	targetsAVY.push("Don Fernando");
 } else {
-	document.getElementById("extra1").innerHTML = ("Kill Don Fernando first.");
+	targetsAVY.unshift("Don Fernando");
 };
+
+document.getElementById("mainresult").innerHTML = ("Start by heading " + entryAVY[Math.floor(Math.random()*entryAVY.length)].fontcolor("red") + " and kill the targets in the following order using the following methods:<br><br>" + targetsAVY[0] + ": " + killAVY[Math.floor(Math.random()*killAVY.length)].fontcolor("red") + "<br>" + 
+targetsAVY[1] + ": " + killAVY[Math.floor(Math.random()*killAVY.length)].fontcolor("red") + 
+"<br><br>Exit using the " + exitAVY[Math.floor(Math.random()*exitAVY.length)].fontcolor("red") + ".")
 
 };
 
@@ -102,67 +114,104 @@ function fullCD() {
 document.getElementById("chosenmission").innerHTML = ("Curtains Down")
 //CD starts and kills
 
-var entryCD = ["Left and down the stairs","Through the opera hall","Right of the hall and down the stairs"];
+var entryCD = ["left and down the stairs","through the opera hall","right of the hall and down the stairs"];
 var killCD = ["Fiber wire","RU-AP Mine","Gun","Gravity","Falling object","Hammer","Screwdriver"];
 
-document.getElementById("mainresult").innerHTML = ("Start by heading " + entryCD[Math.floor(Math.random()*entryCD.length)].toUpperCase().fontcolor("red") +
-". Kill D'Alvade using the " + killCD[Math.floor(Math.random()*killCD.length)].toUpperCase().fontcolor("red") + 
-" and Delahunt using the " + killCD[Math.floor(Math.random()*killCD.length)].toUpperCase().fontcolor("red") +". ");
+document.getElementById("mainresult").innerHTML = ("Start by heading " + entryCD[Math.floor(Math.random()*entryCD.length)].fontcolor("red") + " and kill the targets using the following methods. <br>The order of kills is free unless otherwise specified." + 
+"<br><br>D'Alvade: " + killCD[Math.floor(Math.random()*killCD.length)].fontcolor("red") + 
+"<br>Delahunt: " + killCD[Math.floor(Math.random()*killCD.length)].fontcolor("red"));
 
 //CD extra variables
 
 if (Math.random() <= 0.20) {
 	document.getElementById("extra1").innerHTML=("Kill Delahunt first.");
-} else {
-	document.getElementById("extra1").innerHTML=("");
 };
 	
 if (Math.random() <= 0.20) {
 	document.getElementById("extra2").innerHTML=("Retrieve the prop WW2 gun.");
-} else {
-	document.getElementById("extra2").innerHTML=("");
 };
 
 };
 
 function fullFL() {
-document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
-document.getElementById("chosenmission").innerHTML = ("Flatline")
+
+document.getElementById("chosenmission").innerHTML = ("Flatline");
+
+var killFL = ["Fiber wire","RU-AP mine","Gun","Pool","Gravity","Accidents"];
+var entryFL = ["second floor","front door","security station","gym"];
+var targetsFL = shuffle(["<br>Red target".fontcolor("red"),"<br>Blue target".fontcolor("blue"),"<br>Green target".fontcolor("green")]);
+
+document.getElementById("mainresult").innerHTML = ("Enter through the " + entryFL[Math.floor(Math.random()*entryFL.length)].fontcolor("red") + 
+".<br><br>Kill the targets in the following order, using the following methods:" + 
+targetsFL[0] + ": " + killFL[Math.floor(Math.random()*killFL.length)] + 
+targetsFL[1] + ": " + killFL[Math.floor(Math.random()*killFL.length)] + 
+targetsFL[2] + ": " + killFL[Math.floor(Math.random()*killFL.length)]);
+
+
+
+
+
+
+
 }
 
 function fullANL() {
 document.getElementById("chosenmission").innerHTML = ("A New Life")
 //ANL entrances, exits and kills
 
-var entryANL = ["Garage","Basement","Front door","Backyard"];
-var killANL = ["Kitchen knife","Fiber wire","Nailer","RU-AP Mine","Baseball bat","Gun","Glass ceiling","Car","Gravity","Swimming pool","Hedge Cutter"];
-var exitANL = ["Garage","Front door"];
+var entryANL = ["garage","basement","front door","backyard"];
+var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat","gun","glass ceiling","car","gravity","swimming pool","hedge cutter"];
+var exitANL = ["garage","front door"];
 
-document.getElementById("mainresult").innerHTML = ("Enter through the " + entryANL[Math.floor(Math.random()*entryANL.length)].toUpperCase().fontcolor("red") +
- ", kill Vinnie using the " + killANL[Math.floor(Math.random()*killANL.length)].toUpperCase().fontcolor("red") +
- " and exit through the " + exitANL[Math.floor(Math.random()*exitANL.length)].toUpperCase().fontcolor("red") +". ");
+document.getElementById("mainresult").innerHTML = ("Enter through the " + entryANL[Math.floor(Math.random()*entryANL.length)].fontcolor("red") +
+ ".<br><br>Kill Vinnie using the " + killANL[Math.floor(Math.random()*killANL.length)].fontcolor("red") +
+ ".<br><br>Exit through the " + exitANL[Math.floor(Math.random()*exitANL.length)].fontcolor("red") +". ");
 	
 //ANL extra variables
 
 if (Math.random() <= 0.15) {
 	document.getElementById("extra1").innerHTML=("Vinnie's wife must survive.");
-} else {
-	document.getElementById("extra1").innerHTML=("");
 };
 
+if (Math.random() <= 0.19) {
+	document.getElementById("extra2").innerHTML = ("The dog must survive.");
+};
 };
 
 function fullTMOC() {
-document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
-document.getElementById("chosenmission").innerHTML = ("The Murder of Crows")
+document.getElementById("chosenmission").innerHTML = ("The Murder of Crows");
+
+var killTMOC = ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen knife"];
+var targetsTMOC = shuffle(["Angelina","Mark Puryah II","Raymond"]);
+
+while (targetsTMOC[0] === "Raymond") {
+	shuffle(targetsTMOC);
+}
+
+document.getElementById("mainresult").innerHTML = ("Kill the targets in the following order with the following methods:<br><br>" + 
+targetsTMOC[0] + ": " + killTMOC[Math.floor(Math.random()*killTMOC.length)].fontcolor("red") + "<br>" + 
+targetsTMOC[1] + ": " + killTMOC[Math.floor(Math.random()*killTMOC.length)].fontcolor("red") + "<br>" + 
+targetsTMOC[2] + ": " + killTMOC[Math.floor(Math.random()*killTMOC.length)].fontcolor("red"));
+
+if (Math.random() <= 0.05) {
+	document.getElementById("extra1").innerHTML = ("Retrieve the Kazo TRG.");
+}
+
 }
 
 function fullYBWO() {
 document.getElementById("chosenmission").innerHTML = ("You Better Watch Out")
-var entryYBWO = ["Guest elevator","Staff elevator"];
-var topFloor = ["Elevator","Staircase"];
-var killYBWO = ["Fiber wire","RU-AP mine","Gun","gravity","jacuzzi","kitchen knife"];
-var killOrder = Math.random();
+
+var entryYBWO = ["guest elevator","staff elevator"];
+var topFloor = ["elevator","staircase"];
+var killYBWO = ["Fiber wire","RU-AP mine","Gun","Gravity","Jacuzzi/Water","Kitchen knife"];
+var targetsYBWO = ["Chad"]
+
+if (Math.random() <= 0.69) {
+	targetsYBWO.push("Lorne");
+} else {
+	targetsYBWO.unshift("Lorne");
+};
 
 if (Math.random() <= 0.69) {
 	exitYBWO = "helicopter."
@@ -170,92 +219,110 @@ if (Math.random() <= 0.69) {
 	exitYBWO = "boat."
 }
 
-document.getElementById("mainresult").innerHTML = ("Use the " + entryYBWO[Math.floor(Math.random()*entryYBWO.length)].toUpperCase().fontcolor("red") + 
-" to reach the main floor and the " + topFloor[Math.floor(Math.random()*topFloor.length)].toUpperCase().fontcolor("red") + 
-" to reach the top floor. Kill Chad using the " + killYBWO[Math.floor(Math.random()*killYBWO.length)].toUpperCase().fontcolor("red") + 
-" and Lorne using the " + killYBWO[Math.floor(Math.random()*killYBWO.length)].toUpperCase().fontcolor("red") + 
-". Exit using the " + exitYBWO.toUpperCase().fontcolor("red"));
+document.getElementById("mainresult").innerHTML = ("When going up, use the " + entryYBWO[Math.floor(Math.random()*entryYBWO.length)].fontcolor("red") + 
+" to reach the main floor and the " + topFloor[Math.floor(Math.random()*topFloor.length)].fontcolor("red") + 
+" to reach the top floor. <br>Kill the targets in the following order, using the following methods:<br><br>" + 
+targetsYBWO[0] + ": " + killYBWO[Math.floor(Math.random()*killYBWO.length)].fontcolor("red") + "<br>" + 
+targetsYBWO[1] + ": " + killYBWO[Math.floor(Math.random()*killYBWO.length)].fontcolor("red") + 
+"<br><br>Exit using the " + exitYBWO.fontcolor("red"));
 
-if (killOrder <= 0.19) {
-	document.getElementById("extra1").innerHTML = ("Kill Chad first.");
-} else if (killOrder <= 0.39) {
-	document.getElementById("extra1").innerHTML = ("Kill Lorne first.");
-} else {
-	document.getElementById("extra1").innerHTML = ("");
-};
 
 if (Math.random() <= 0.19) {
 	document.getElementById("extra2").innerHTML = ("Kill the female assassin.");
-} else {
-	document.getElementById("extra2").innerHTML = ("");
-}
+};
 
 if (Math.random() <= 0.19) {
 	document.getElementById("extra3").innerHTML = ("The dog must survive.");
-} else {
-	document.getElementById("extra3").innerHTML = ("");
-}
+};
 
 };
 
 function fullDOTM() {
-document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
-document.getElementById("chosenmission").innerHTML = ("Death on the Mississippi")
+
+document.getElementById("chosenmission").innerHTML = ("Death on the Mississippi");
+
+var killDOTM = ["Fiber wire","RU-AP mine","Gun","Kitchen knife","Fire extinguisher","Shovel","Accidents"];
+var startDOTM = ["to the engine room","to the cabins"];
+
+document.getElementById("mainresult").innerHTML = ("Start by heading " + startDOTM[Math.floor(Math.random()*startDOTM.length)].fontcolor("red") + ".<br><br>" + 
+"Kill the targets using the following weapons:<br>Skip: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red") + 
+"<br>Gang member: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red") + 
+"<br>Gang member: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red") + 
+"<br>Gang member: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red") + 
+"<br>Gang member: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red") + 
+"<br>Gang member: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red") + 
+"<br>Gang member: " + killDOTM[Math.floor(Math.random()*killDOTM.length)].fontcolor("red"))
+
+
+
+
+if (Math.random() <= 0.10) {
+	document.getElementById("extra1").innerHTML = ("Retrieve the FN-2000.");
+}
+
 }
 
 function fullTDDUP() {
 document.getElementById("chosenmission").innerHTML = ("Till Death Do Us Part")
 //TDDUP entrances, exits and kills
-var entryTDDUP = ["Left Door","Main Door","Right Door"];
-var killTDDUP = ["Fiber Wire","RU-AP Mine","Gun","Gravity","Swamp","Shovel","Chandelier"];
-var exitTDDUP = ["Your own boat","The priest's boat"];
-
-document.getElementById("mainresult").innerHTML = ("Enter through the " + entryTDDUP[Math.floor(Math.random()*entryTDDUP.length)].toUpperCase().fontcolor("red") +
- ", kill Buddy using the " + killTDDUP[Math.floor(Math.random()*killTDDUP.length)].toUpperCase().fontcolor("red") +
- ", Pappy using the " + killTDDUP[Math.floor(Math.random()*killTDDUP.length)].toUpperCase().fontcolor("red") +
- " and exit using the " + exitTDDUP[Math.floor(Math.random()*exitTDDUP.length)].toUpperCase().fontcolor("red") +". ");
-
-//TDDUP extra variables
+var entryTDDUP = ["left door","front door","right door"];
+var killTDDUP = ["Fiber wire","RU-AP mine","Gun","Gravity","Swamp","Shovel","Chandelier"];
+var exitTDDUP = ["your own boat","the priest's boat"];
+var targetsTDDUP = ["Buddy"]
 
 if (Math.random() <= 0.49) {
-	document.getElementById("extra1").innerHTML = ("Kill Pappy first.");
+	targetsTDDUP.push("Pappy");
 } else {
-	document.getElementById("extra1").innerHTML = ("Kill Buddy first.");
+	targetsTDDUP.unshift("Pappy");
 };
+
+document.getElementById("mainresult").innerHTML = ("Enter through the " + entryTDDUP[Math.floor(Math.random()*entryTDDUP.length)].fontcolor("red") +
+" and kill the targets in the following order, using the following methods:<br><br>" + 
+targetsTDDUP[0] + ": " + killTDDUP[Math.floor(Math.random()*killTDDUP.length)].fontcolor("red") + "<br>" + 
+targetsTDDUP[1] + ": " + killTDDUP[Math.floor(Math.random()*killTDDUP.length)].fontcolor("red") + "<br><br>Exit using " + 
+exitTDDUP[Math.floor(Math.random()*exitTDDUP.length)].fontcolor("red") + ".")
+
+ 
+//TDDUP extra variables
+
 
 if (Math.random() <= 0.30) {
 	document.getElementById("extra2").innerHTML = ("Never go to the second floor.");
-} else {
-	document.getElementById("extra2").innerHTML = ("");
-};
-
+}
 };
 
 function fullAHOC() {
 document.getElementById("chosenmission").innerHTML = ("A House of Cards")
-document.getElementById("mainresult").innerHTML = "lmao play some other mission this is literally 5 minutes of waiting and not fun";
 
-document.getElementById("extra1").innerHTML = "for real though I'll get back to this later probably the last mission I'll do";
+var killAHOC = ["Fiber wire","RU-AP mine","Gun","Gravity"];
+var targetsAHOC = shuffle(["Schmutz","The sheikh","The scientist"]);
+
+document.getElementById("mainresult").innerHTML = ("Kill the targets in the following order with the following methods:<br><br>" + 
+targetsAHOC[0] + ": " + killAHOC[Math.floor(Math.random()*killAHOC.length)].fontcolor("red") + "<br>" + 
+targetsAHOC[1] + ": " + killAHOC[Math.floor(Math.random()*killAHOC.length)].fontcolor("red") + "<br>" + 
+targetsAHOC[2] + ": " + killAHOC[Math.floor(Math.random()*killAHOC.length)].fontcolor("red"));
+
+if (Math.random() <= 0.15) {
+	document.getElementById("extra1").innerHTML = ("Never step into 7th or 8th floors.");
+}
 
 };
 
 function fullADWTD(){
-document.getElementById("mainresult").innerHTML = ("Randomization for this mission is not yet ready.")
 document.getElementById("chosenmission").innerHTML = ("A Dance with the Devil")
 
 var danceStart = ["Heaven party","Hell party"]
 var danceKill = ["Fiber wire","RU-AP mine","Gun","Accidents","Meat Cleaver","Stiletto","Cane sword"]
 
-document.getElementById("mainresult").innerHTML = ("Visit the " + danceStart[Math.floor(Math.random()*danceStart.length)].toUpperCase().fontcolor("red") + 
-" first and kill the targets using the following weapons:<br><br>Martinez: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red") +
-"<br>Vaana: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red") +
-"<br>Maynard John: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red") +
-"<br>Eve: " + danceKill[Math.floor(Math.random()*danceKill.length)].toUpperCase().fontcolor("red"))
+document.getElementById("mainresult").innerHTML = ("Visit the " + danceStart[Math.floor(Math.random()*danceStart.length)].fontcolor("red") + 
+" first and kill the targets using the following weapons.<br>The order of kills is free unless otherwise specified.<br><br>Martinez: " + 
+danceKill[Math.floor(Math.random()*danceKill.length)].fontcolor("red") +
+"<br>Vaana: " + danceKill[Math.floor(Math.random()*danceKill.length)].fontcolor("red") +
+"<br>Maynard John: " + danceKill[Math.floor(Math.random()*danceKill.length)].fontcolor("red") +
+"<br>Eve: " + danceKill[Math.floor(Math.random()*danceKill.length)].fontcolor("red"))
 
 if (Math.random() <= 0.10) {
 	document.getElementById("extra1").innerHTML=("Steal the video tape.");
-} else {
-	document.getElementById("extra1").innerHTML=("");
 };
 
 
@@ -266,39 +333,42 @@ function fullAXXV() {
 document.getElementById("chosenmission").innerHTML = ("Amendment XXV")
 //AXXV main variables
 
-var firstHalf = ["The roof","The hallway"];
-var secondHalf = ["The roof","The courtyard"];
-var killAXXV =  ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen Knife","Nailer"];
+var firstHalf = ["the roof","the hallway"];
+var secondHalf = ["the roof","the courtyard"];
+var killAXXV =  ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen knife","Nailer"];
+var targetsAXXV = ["The Vice President"]
 
-document.getElementById("mainresult").innerHTML = ("Enter the main building through the " + firstHalf[Math.floor(Math.random()*firstHalf.length)].toUpperCase().fontcolor("red") + 
+if (Math.random() <= 0.79) {
+	targetsAXXV.push("Mark Parchezzi III");
+} else {
+	targetsAXXV.unshift("Mark Parchezzi III");
+};
+
+document.getElementById("mainresult").innerHTML = ("When going to the main building, use " + firstHalf[Math.floor(Math.random()*firstHalf.length)].fontcolor("red") + 
+" and when going to the West Wing, use " + secondHalf[Math.floor(Math.random()*secondHalf.length)].fontcolor("red") + "<br>Kill the targets in the following order, using the following methods:<br><br>" + 
+targetsAXXV[0] + ": " + killAXXV[Math.floor(Math.random()*killAXXV.length)].fontcolor("red") + "<br>" + 
+targetsAXXV[1] + ": " + killAXXV[Math.floor(Math.random()*killAXXV.length)].fontcolor("red") + 
+"<br><br>When returning to the main building, use " + secondHalf[Math.floor(Math.random()*secondHalf.length)].fontcolor("red") + 
+" and when returning to the entrance, use " + firstHalf[Math.floor(Math.random()*firstHalf.length)].fontcolor("red") + ".");
+/*document.getElementById("mainresult").innerHTML = ("Enter the main building through the " + firstHalf[Math.floor(Math.random()*firstHalf.length)].toUpperCase().fontcolor("red") + 
 " and the West Wing through " + secondHalf[Math.floor(Math.random()*secondHalf.length)].toUpperCase().fontcolor("red") + 
 ". Kill the vice president using the " + killAXXV[Math.floor(Math.random()*killAXXV.length)].toUpperCase().fontcolor("red") + 
 " and Mark Parchezzi III using the " + killAXXV[Math.floor(Math.random()*killAXXV.length)].toUpperCase().fontcolor("red") + 
 ". Leave the West Wing through the " + secondHalf[Math.floor(Math.random()*secondHalf.length)].toUpperCase().fontcolor("red") + 
-" and the main building through the " + firstHalf[Math.floor(Math.random()*firstHalf.length)].toUpperCase().fontcolor("red") + ".")
+" and the main building through the " + firstHalf[Math.floor(Math.random()*firstHalf.length)].toUpperCase().fontcolor("red") + ".")*/
 
-if (Math.random() <= 0.64) {
-	document.getElementById("extra1").innerHTML = ("Kill the vice president first.");
-} else {
-	document.getElementById("extra1").innerHTML = ("Kill Mark Parchezzi III first.");
-};
+
 
 if (Math.random() <= 0.20) {
 	document.getElementById("extra2").innerHTML=("Retrieve Parchezzi's Custom 1911.");
-} else {
-	document.getElementById("extra2").innerHTML=("");
 };
 
 if (Math.random() <= 0.05) {
 	document.getElementById("extra3").innerHTML=("The fire alarm must not be triggered.");
-} else {
-	document.getElementById("extra3").innerHTML=("");
 };
 
 if (Math.random() <= 0.10) {
 	document.getElementById("extra4").innerHTML=("The dog must survive.");
-} else {
-	document.getElementById("extra4").innerHTML=("");
 };
 
 }
