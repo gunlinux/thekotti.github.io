@@ -30,22 +30,31 @@ function shuffle(array) {
   return array;
 }
 
+document.getElementById("themeswitch").onclick = function (){
+	var theme = document.getElementById("theme_css");
+	if (theme.href.match("mini.css")) {
+		theme.href = "css/minidark.css";
+	} else if (theme.href.match = "minidark.css") {
+		theme.href = "css/mini.css";
+	}
+}
+
 function extraVariables() {
 
 
-if (Math.random() <= 0.30) {
+if (Math.random() <= 0.15) {
     document.getElementById("getshotextra").innerHTML=("Do not get shot at by the guards. ");
 };
 
-if (Math.random() <= 0.30) {
+if (Math.random() <= 0.15) {
     document.getElementById("distractionsextra").innerHTML=("Do not use gunshots or explosives as distractions. ");
 };
 
-if (Math.random() <= 0.30) {
+if (Math.random() <= 0.15) {
 	document.getElementById("knockoutsextra").innerHTML=("Do not use any unnecessary knockouts or accidents. ");
 };
 
-if (Math.random() <= 0.30) {
+if (Math.random() <= 0.15) {
 	document.getElementById("suitonlyextra").innerHTML=("Do not use any disguises. ");
 };
 
@@ -139,7 +148,7 @@ document.getElementById("chosenmission").innerHTML = ("Flatline");
 
 var killFL = ["Fiber wire","RU-AP mine","Gun","Pool","Gravity","Accidents"];
 var entryFL = ["second floor","front door","security station","gym"];
-var targetsFL = shuffle(["<br>Red target".fontcolor("red"),"<br>Blue target".fontcolor("blue"),"<br>Green target".fontcolor("green")]);
+var targetsFL = shuffle(["<br>Red target".fontcolor("red"),"<br><span id='blue'>Blue target</span>".fontcolor("blue"),"<br><span id='green'>Green target</span>".fontcolor("green")]);
 
 document.getElementById("mainresult").innerHTML = ("Enter through the " + entryFL[Math.floor(Math.random()*entryFL.length)].fontcolor("red") + 
 ".<br><br>Kill the targets in the following order, using the following methods:" + 

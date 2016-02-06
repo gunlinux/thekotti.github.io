@@ -1,0 +1,44 @@
+* {
+	font-family:sans-serif;
+}
+
+body {
+	background-color:black;
+}
+
+p {
+	color:white;
+}
+
+#roulettesection {
+	
+}
+
+.genericextras {
+	color:#00ccff;
+}
+
+.missionextras {
+	color:red;
+}
+
+#chosenmission {
+	font-size:18px;
+	font-weight: bold;
+	color:#cc0000;
+}
+
+#themeswitch {
+	position:absolute;
+	bottom:5px;
+	right:5px;
+	font-size:10px;
+}
+
+#mainresult #blue {
+	color:#00ccff;
+}
+
+#mainresult #green {
+	color:#00ff00
+}

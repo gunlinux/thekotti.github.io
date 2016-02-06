@@ -2,20 +2,12 @@
 <html>
 	<head lang="en">
 		<title>Blood Money Roulette</title>
-		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<link rel="stylesheet" href="css/mini.css" type="text/css" id="theme_css" />
 		<meta charset="utf-8">		
 	</head>
 	
 	<body>
-		<header>
-			<h1>Hitman Blood Money Roulette</h1>
-		</header>
 		
-		<nav>
-			<a href="roulette.html">Roulette</a><br>
-			<a href="about.html">About</a>
-		</nav>
-	
 		<section id="roulettesection">
 			<form>
 				<select id="missionselect">
@@ -32,9 +24,8 @@
 					<option value="ADWTD">A Dance with the Devil</option>
 					<option value="AXXV">Amendment XXV</option>
 				</select>
-				<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission(),difficultyCalc()">Make it go</button>
+				<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission()">Make it go</button>
 				<p id="difficulty" style="display:inline"></p>
-				<a id="popoutnappi" href="roulettemini.html"  onclick="window.open('roulettemini.html', 'newwindow', 'width=300, height=600'); return false;">Popout</a>
 			</form>
 				<p id="chosenmission"></p>
 				<p id="mainresult"></p>
@@ -47,14 +38,13 @@
 				<p id="distractionsextra" class="genericextras"></p>
 				<p id="knockoutsextra" class="genericextras"></p>
 				<p id="suitonlyextra" class="genericextras"></p>
+				
+				<a id="themeswitch" href="#">Switch theme</a>
 
 				<script src="js/roulette.js"></script>
 
 		</section>
 		
-		<footer>
-			<p>By <a href="https://twitter.com/TheKotti">Kotti</a></p>
-		</footer>
 		
 	</body>
 </html>
