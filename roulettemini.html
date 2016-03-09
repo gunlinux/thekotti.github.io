@@ -24,8 +24,15 @@
 					<option value="ADWTD">A Dance with the Devil</option>
 					<option value="AXXV">Amendment XXV</option>
 				</select>
-				<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission()">Make it go</button>
-				<p id="difficulty" style="display:inline"></p>
+				<button type="button" style="display:inline" onclick="clearAll(),extraVariables(),chooseMission(),extraAmount()">Make it go</button>
+				<br><select id="extraselect">
+					<option value="RANDOM">Random extras</option>
+					<option value="0">No extras</option>
+					<option value="1">1 extra</option>
+					<option value="2">2 extras</option>
+					<option value="3">3 extras</option>
+					<option value="4">4 extras</option>
+				</select>
 			</form>
 				<p id="chosenmission"></p>
 				<p id="mainresult"></p>
