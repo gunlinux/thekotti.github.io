@@ -24,22 +24,47 @@ function clearAll() {
 
 var allKills = [];
 
+//For popout
+document.getElementById("themeswitch").onclick = function(){
+	var theme = document.getElementById("theme_css");
+	if (theme.href.match("mini.css")) {
+		theme.href = "css/minidark.css";
+	} else if (theme.href.match = "minidark.css") {
+		theme.href = "css/mini.css";
+	}
+}
+
+function chooseMission() {
+
+var mission = document.getElementById("missionselect").selectedIndex;
+var missionList = [showstopper];
+
+	if ((document.getElementsByTagName("option")[mission].value) === "TSS") {
+		showstopper();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "RANDOM") {
+		missionList[Math.floor(Math.random()*missionList.length)]();
+	} else {
+		document.getElementById("mainresult").innerHTML = ("Something seems to have gone wrong. Choose another mission and hope something goes right.");
+	};
+
+};
+
 function extras() {
 	
-if (Math.random() < 0.2) {
-	result.extra1 = (document.getElementById("extra1").innerHTML = "Never change into a new disguise.".fontcolor("blue"))
+if (Math.random() < 0.19) {
+	result.extra1 = (document.getElementById("extra1").innerHTML = "Never change into a new disguise.")
 }
 
-if (Math.random() < 0.2) {
-	result.extra2 = (document.getElementById("extra2").innerHTML = "Do not kill or subdue non-targets.".fontcolor("blue"))
+if (Math.random() < 0.19) {
+	result.extra2 = (document.getElementById("extra2").innerHTML = "Do not kill or subdue non-targets.")
 }
 
-if (Math.random() < 0.2) {
-	result.extra3 = (document.getElementById("extra3").innerHTML = "Do not use coins or other throwables as distractions.".fontcolor("blue"))
+if (Math.random() < 0.19) {
+	result.extra3 = (document.getElementById("extra3").innerHTML = "Do not use throwable items as distractions.")
 }
 
-if (Math.random() < 0.2) {
-	result.extra4 = (document.getElementById("extra4").innerHTML = "Do not miss any shots.".fontcolor("blue"))
+if (Math.random() < 0.19) {
+	result.extra4 = (document.getElementById("extra4").innerHTML = "Do not miss any shots.")
 }
 
 }
@@ -79,10 +104,10 @@ function createKillList() {
 createKillList();
 
 result.mission = "The Showstopper";
-result.start = "Start: ".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
 result.kill1 = "Viktor Novikov: ".fontcolor("red") + allKills[Math.floor(Math.random()*allKills.length)];
 result.kill2 = "Dalia Margolis: ".fontcolor("red") + allKills[Math.floor(Math.random()*allKills.length)];
-result.exit = "Escape: ".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
 
 document.getElementById("chosenmission").innerHTML = result.mission;
 document.getElementById("start").innerHTML = result.start;

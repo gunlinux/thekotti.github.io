@@ -9,7 +9,7 @@
 	
 }
 
-.genericextras {
+.genericextras,#extra1,#extra2,#extra3,#extra4,#extra5 {
 	color:blue;
 }
 
@@ -28,4 +28,14 @@
 	bottom:5px;
 	right:5px;
 	font-size:10px;
+}
+
+#resultsection2016 {
+	line-height:1.2;
+	margin-top:20px;
+}
+
+#resultsection2016 p {
+	margin-top: 1px;
+	margin-bottom: 1px;
 }

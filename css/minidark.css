@@ -14,7 +14,7 @@ p {
 	
 }
 
-.genericextras {
+.genericextras,#extra1,#extra2,#extra3,#extra4,#extra5 {
 	color:#00ccff;
 }
 
@@ -35,10 +35,20 @@ p {
 	font-size:10px;
 }
 
-#mainresult #blue {
+#blue {
 	color:#00ccff;
 }
 
 #mainresult #green {
 	color:#00ff00
+}
+
+#resultsection2016 {
+	line-height:1.2;
+	margin-top:20px;
+}
+
+#resultsection2016 p {
+	margin-top: 1px;
+	margin-bottom: 1px;
 }

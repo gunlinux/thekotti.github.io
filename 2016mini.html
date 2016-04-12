@@ -2,31 +2,20 @@
 <html>
 	<head lang="en">
 		<title>Hitman Roulette</title>
-		<link rel="stylesheet" href="css/main.css" type="text/css">
-		<link rel="stylesheet" href="css/2016.css" type="text/css">
+		<link rel="stylesheet" href="css/mini.css" type="text/css" id="theme_css" />
 		<meta charset="utf-8">		
 	</head>
 	
 	<body>
-		<header>
-			<h1>Hitman Roulette</h1>
-		</header>
 		
-		<nav>
-			<a href="roulette.html">Blood Money</a><br>
-			<a href="2016.html">Hitman 2016</a><br>
-			<a href="about.html">About</a>
-		</nav>
-	
 		<section id="roulettesection">
 
 				<select id="missionselect">
 					<option value="RANDOM">Random Mission</option>
 					<option value="TSS">The Showstopper</option>
 				</select>
-				<button type="button" style="display:inline" onclick="clearAll(),chooseMission(),extras(),test()">Make it go</button>
+				<button type="button" style="display:inline" onclick="clearAll(),showstopper(),extras(),test()">Make it go</button>
 				<button type="button" id="filterbutton" style="display:inline" onclick="showFilters()">Show options</button>
-				<a id="popoutnappi" href="roulettemini.html"  onclick="window.open('2016mini.html', 'newwindow', 'width=300, height=600'); return false;">Popout</a>
 				<br>
 				<div id="filters" style="display:none">
 				<input type="checkbox" id="melee" value="true">Specific melee weapons
@@ -39,7 +28,7 @@
 				</div>
 
 				<p id="chosenmission" class="allresults"></p>
-				<div id="resultsection">
+				<div id="resultsection2016">
 				<p id="start" class="allresults"></p>
 				<p id="kill1" class="allresults"></p>
 				<p id="kill2" class="allresults"></p>
@@ -51,14 +40,13 @@
 				<p id="extra5" class="allresults" class="genericextras"></p>
 				<p id="testi"></p>
 				</div>
+				
+				<a id="themeswitch" href="#">Switch theme</a>
 
 				<script src="js/2016.js"></script>
 
 		</section>
 		
-		<footer>
-			<p>By <a href="https://twitter.com/TheKotti">Kotti</a></p>
-		</footer>
 		
 	</body>
 </html>

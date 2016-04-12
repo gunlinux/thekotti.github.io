@@ -70,32 +70,3 @@ section h3 {
 	color:#0099ff;
 	font-weight:bold;
 }
-
-/*For roulette page*/
-
-#roulettesection {
-	height:600px;
-}
-
-.genericextras {
-	color:blue;
-}
-
-.missionextras {
-	color:red;
-}
-
-#resultsection {
-	line-height:0.5;
-	margin-top:20px;
-}
-
-#chosenmission {
-	font-size:18px;
-	font-weight: bold;
-	color:#cc0000;
-}
-
-#popoutnappi {
-	float:right;
-}
