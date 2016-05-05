@@ -203,7 +203,11 @@ var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat"
 var exitANL = ["garage","front door"];
 
 if (Math.random() < 0.15) {
+<<<<<<< HEAD
 	killANL.push("lethal dose of boredom that is already killing him from the inside")
+=======
+	killANL.push("boredom that is already killing him from inside")
+>>>>>>> origin/master
 }
 
 document.getElementById("mainresult").innerHTML = ("Enter through the " + entryANL[Math.floor(Math.random()*entryANL.length)].fontcolor("red") +
