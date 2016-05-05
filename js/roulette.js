@@ -141,7 +141,7 @@ function fullAVY() {
 document.getElementById("chosenmission").innerHTML = ("A Vintage Year")
 
 var entryAVY = ["left from the beginning","right from the beginning","through the party to the cellar","through the party to the main building"];
-var killAVY = ["Fiber wire","RU-AP mine","Gun","Gravity","Falling object","Water/Wine","Kitchen knife","Hammer","Fire extinguisher"];
+var killAVY = ["Fiber wire","RU-AP mine","Gun","Gravity","Falling object","Water/Wine","Kitchen knife","Hammer","Fire extinguisher","Snub nosed (revolver)"];
 var exitAVY = ["cliffside path","elevator"];
 var targetsAVY = ["Manuel"]
 
@@ -161,7 +161,7 @@ function fullCD() {
 document.getElementById("chosenmission").innerHTML = ("Curtains Down")
 
 var entryCD = ["left and down the stairs","through the opera hall","right of the hall and down the stairs"];
-var killCD = ["Fiber wire","RU-AP Mine","Gun","Gravity","Falling object","Hammer","Screwdriver"];
+var killCD = ["Fiber wire","RU-AP Mine","Gun","Gravity","Falling object","Hammer","Screwdriver","Real WWI pistol"];
 
 document.getElementById("mainresult").innerHTML = ("Start by heading " + entryCD[Math.floor(Math.random()*entryCD.length)].fontcolor("red") + " and kill the targets using the following methods. <br>The order of kills is free unless otherwise specified." + 
 "<br><br>D'Alvade: " + killCD[Math.floor(Math.random()*killCD.length)].fontcolor("red") + 
@@ -173,7 +173,7 @@ if (Math.random() <= 0.20) {
 };
 	
 if (Math.random() <= 0.20) {
-	document.getElementById("extra2").innerHTML=("Retrieve the prop WW2 gun.");
+	document.getElementById("extra2").innerHTML=("Retrieve the prop WWI pistol.");
 	extraNumber += 1;
 };
 
@@ -199,10 +199,10 @@ function fullANL() {
 document.getElementById("chosenmission").innerHTML = ("A New Life")
 
 var entryANL = ["garage","basement","front door","backyard"];
-var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat","gun","glass ceiling","car","gravity","swimming pool","hedge cutter"];
+var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat","gun","glass ceiling","car","gravity","swimming pool","hedge cutter","Bull .480"];
 var exitANL = ["garage","front door"];
 
-if (Math.random() < 0.1) {
+if (Math.random() < 0.15) {
 	killANL.push("lethal dose of boredom that is already killing him from the inside")
 }
 
@@ -225,7 +225,7 @@ if (Math.random() <= 0.19) {
 function fullTMOC() {
 document.getElementById("chosenmission").innerHTML = ("The Murder of Crows");
 
-var killTMOC = ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen knife"];
+var killTMOC = ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen knife","Kazo TRG"];
 var targetsTMOC = shuffle(["Angelina","Mark Puryah II","Raymond"]);
 
 while (targetsTMOC[0] === "Raymond") {
@@ -238,7 +238,7 @@ targetsTMOC[1] + ": " + killTMOC[Math.floor(Math.random()*killTMOC.length)].font
 targetsTMOC[2] + ": " + killTMOC[Math.floor(Math.random()*killTMOC.length)].fontcolor("red"));
 
 if (Math.random() <= 0.05) {
-	document.getElementById("extra1").innerHTML = ("Retrieve the Kazo TRG.");
+	document.getElementById("extra1").innerHTML = ("Retrieve the SG552.");
 	extraNumber += 1;
 };
 
@@ -287,7 +287,7 @@ function fullDOTM() {
 
 document.getElementById("chosenmission").innerHTML = ("Death on the Mississippi");
 
-var killDOTM = ["Fiber wire","RU-AP mine","Gun","Kitchen knife","Fire extinguisher","Shovel","Accidents"];
+var killDOTM = ["Fiber wire","RU-AP mine","Gun","Kitchen knife","Fire extinguisher","Shovel","Accidents","Desert Eagle"];
 var startDOTM = ["to the engine room","to the cabins"];
 
 document.getElementById("mainresult").innerHTML = ("Start by heading " + startDOTM[Math.floor(Math.random()*startDOTM.length)].fontcolor("red") + ".<br><br>" + 
@@ -310,7 +310,7 @@ function fullTDDUP() {
 document.getElementById("chosenmission").innerHTML = ("Till Death Do Us Part")
 
 var entryTDDUP = ["left door","front door","right door"];
-var killTDDUP = ["Fiber wire","RU-AP mine","Gun","Gravity","Swamp","Shovel","Chandelier"];
+var killTDDUP = ["Fiber wire","RU-AP mine","Gun","Gravity","Swamp","Shovel","Chandelier","Elephant Rifle"];
 var exitTDDUP = ["your own boat","the priest's boat"];
 var targetsTDDUP = ["Buddy"]
 
@@ -355,7 +355,7 @@ function fullADWTD(){
 document.getElementById("chosenmission").innerHTML = ("A Dance with the Devil")
 
 var danceStart = ["Heaven party","Hell party"]
-var danceKill = ["Fiber wire","RU-AP mine","Gun","Accidents","Meat Cleaver","Stiletto","Cane sword"]
+var danceKill = ["Fiber wire","RU-AP mine","Gun","Accidents","Meat Cleaver","Stiletto","Cane sword","Dragunov Sniper"]
 
 document.getElementById("mainresult").innerHTML = ("Visit the " + danceStart[Math.floor(Math.random()*danceStart.length)].fontcolor("red") + 
 " first and kill the targets using the following weapons.<br>The order of kills is free unless otherwise specified.<br><br>Martinez: " + 
@@ -376,7 +376,7 @@ document.getElementById("chosenmission").innerHTML = ("Amendment XXV")
 
 var firstHalf = ["the roof","the hallway"];
 var secondHalf = ["the roof","the courtyard"];
-var killAXXV =  ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen knife","Nailer"];
+var killAXXV =  ["Fiber wire","RU-AP mine","Gun","Gravity","Kitchen knife","Nailer","Custom 1911"];
 var targetsAXXV = ["The Vice President"]
 
 if (Math.random() <= 0.79) {
@@ -392,11 +392,6 @@ targetsAXXV[1] + ": " + killAXXV[Math.floor(Math.random()*killAXXV.length)].font
 "<br><br>When returning to the main building, use " + secondHalf[Math.floor(Math.random()*secondHalf.length)].fontcolor("red") + 
 " and when returning to the entrance, use " + firstHalf[Math.floor(Math.random()*firstHalf.length)].fontcolor("red") + ".");
 
-
-if (Math.random() <= 0.20) {
-	document.getElementById("extra2").innerHTML=("Retrieve Parchezzi's Custom 1911.");
-	extraNumber += 1;
-};
 
 if (Math.random() <= 0.05) {
 	document.getElementById("extra3").innerHTML=("The fire alarm must not be triggered.");
