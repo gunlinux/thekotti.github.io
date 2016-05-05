@@ -202,7 +202,7 @@ var entryANL = ["garage","basement","front door","backyard"];
 var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat","gun","glass ceiling","car","gravity","swimming pool","hedge cutter"];
 var exitANL = ["garage","front door"];
 
-if (Math.random() < 1) {
+if (Math.random() < 0.15) {
 	killANL.push("boredom that is already killing him from inside")
 }
 
