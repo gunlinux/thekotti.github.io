@@ -202,6 +202,10 @@ var entryANL = ["garage","basement","front door","backyard"];
 var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat","gun","glass ceiling","car","gravity","swimming pool","hedge cutter"];
 var exitANL = ["garage","front door"];
 
+if (Math.random() < 0.1) {
+	killANL.push("lethal dose of boredom that is already killing him from the inside")
+}
+
 document.getElementById("mainresult").innerHTML = ("Enter through the " + entryANL[Math.floor(Math.random()*entryANL.length)].fontcolor("red") +
  ".<br><br>Kill Vinnie using the " + killANL[Math.floor(Math.random()*killANL.length)].fontcolor("red") +
  ".<br><br>Exit through the " + exitANL[Math.floor(Math.random()*exitANL.length)].fontcolor("red") +". ");

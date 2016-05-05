@@ -37,10 +37,12 @@ document.getElementById("themeswitch").onclick = function(){
 function chooseMission() {
 
 var mission = document.getElementById("missionselect").selectedIndex;
-var missionList = [showstopper];
+var missionList = [showstopper,wot];
 
 	if ((document.getElementsByTagName("option")[mission].value) === "TSS") {
 		showstopper();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "WOT") {
+		wot();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "RANDOM") {
 		missionList[Math.floor(Math.random()*missionList.length)]();
 	} else {
@@ -67,13 +69,16 @@ if (Math.random() < 0.19) {
 	result.extra4 = (document.getElementById("extra4").innerHTML = "Do not miss any shots.")
 }
 
+if (Math.random() < 0.09) {
+	result.extra5 = (document.getElementById("extra5").innerHTML = "Do not climb pipes.")
+}
+
 }
 
 function showstopper() {
 	
 var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion"];
-var melee = ["Screwdriver","Letter Opener","Scissors","Kitchen Knife","Fiber Wire","Fire Axe","Battle Axe","Saber"];
-var accidents = ["Falling","Chandelier"];
+var melee = ["Screwdriver","Letter Opener","Scissors","Kitchen Knife","Fiber Wire","Fire Axe","Battle Axe","Saber","Hatchet"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var entry = ["Main Entrance","Palace Garden","Pile-Driver Barge","Attic","Kitchen","Locker Room","IAGO Auction","AV Center","Dressing Area"];
@@ -83,11 +88,6 @@ function createKillList() {
 	if (document.getElementById("melee").checked == 1) {
 		for (i = 0; i < melee.length; i++) {
 			allKills.push(melee[i])
-		}
-	}
-	if (document.getElementById("accident").checked == 1) {
-		for (i = 0; i < accidents.length; i++) {
-			allKills.push(accidents[i])
 		}
 	}
 	if (document.getElementById("firearm").checked == 1) {
@@ -116,6 +116,49 @@ document.getElementById("kill2").innerHTML = result.kill2;
 document.getElementById("exit").innerHTML = result.exit;
 
 }
+
+function wot() {
+	
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion"];
+var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver"];
+var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+
+var entry = ["Main Square","ICA Safe House","Harbor","Sapienza Ruins","Main Square Town","Church Morgue","Mansion Kitchen","Field Lab","Mansion Garden","Security Staff"];
+var exit = ["Car","Speedboat (pier)","Plane","Speedboat (ruins)"];
+
+function createKillList() {
+	if (document.getElementById("melee").checked == 1) {
+		for (i = 0; i < melee.length; i++) {
+			allKills.push(melee[i])
+		}
+	}
+	if (document.getElementById("firearm").checked == 1) {
+		for (i = 0; i < firearms.length; i++) {
+			allKills.push(firearms[i])
+		}
+	}
+	if (document.getElementById("generic").checked == 0) {
+		for (i = 0; i < genericKills.length; i++) {
+			allKills.push(genericKills[i])
+		}
+	}
+}
+createKillList();
+
+result.mission = "World of Tomorrow";
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.kill1 = "Silvio Caruso: ".fontcolor("red") + allKills[Math.floor(Math.random()*allKills.length)];
+result.kill2 = "Francesca De Santis: ".fontcolor("red") + allKills[Math.floor(Math.random()*allKills.length)];
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+
+document.getElementById("chosenmission").innerHTML = result.mission;
+document.getElementById("start").innerHTML = result.start;
+document.getElementById("kill1").innerHTML = result.kill1;
+document.getElementById("kill2").innerHTML = result.kill2;
+document.getElementById("exit").innerHTML = result.exit;
+
+}
+
 
 function test() {
 	console.log(allKills)
