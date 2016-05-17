@@ -77,7 +77,7 @@ if (Math.random() < 0.09) {
 
 function showstopper() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion"];
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Screwdriver","Letter Opener","Scissors","Kitchen Knife","Fiber Wire","Fire Axe","Battle Axe","Saber","Hatchet"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
@@ -119,11 +119,11 @@ document.getElementById("exit").innerHTML = result.exit;
 
 function wot() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion"];
-var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver"];
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Saber","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
-var entry = ["Main Square","ICA Safe House","Harbor","Sapienza Ruins","Main Square Town","Church Morgue","Mansion Kitchen","Field Lab","Mansion Garden","Security Staff"];
+var entry = ["Main Square","ICA Safe House","Harbor","Sapienza Ruins","Main Square Tower","Church Morgue","Mansion Kitchen","Field Lab","Mansion Garden","Security Staff"];
 var exit = ["Car","Speedboat (pier)","Plane","Speedboat (ruins)"];
 
 function createKillList() {

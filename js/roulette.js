@@ -202,7 +202,7 @@ var entryANL = ["garage","basement","front door","backyard"];
 var killANL = ["kitchen knife","fiber wire","nailer","RU-AP mine","baseball bat","gun","glass ceiling","car","gravity","swimming pool","hedge cutter","Bull .480"];
 var exitANL = ["garage","front door"];
 
-if (Math.random() < 0.15) {
+if (Math.random() < 0.14) {
 	killANL.push("lethal dose of boredom that is already killing him from the inside")
 }
 
@@ -210,7 +210,7 @@ document.getElementById("mainresult").innerHTML = ("Enter through the " + entryA
  ".<br><br>Kill Vinnie using the " + killANL[Math.floor(Math.random()*killANL.length)].fontcolor("red") +
  ".<br><br>Exit through the " + exitANL[Math.floor(Math.random()*exitANL.length)].fontcolor("red") +". ");
 
-if (Math.random() <= 0.15) {
+if (Math.random() <= 0.14) {
 	document.getElementById("extra1").innerHTML=("Vinnie's wife must survive.");
 	extraNumber += 1;
 };
@@ -251,6 +251,10 @@ var entryYBWO = ["guest elevator","staff elevator"];
 var topFloor = ["elevator","staircase"];
 var killYBWO = ["Fiber wire","RU-AP mine","Gun","Gravity","Jacuzzi/Water","Kitchen knife"];
 var targetsYBWO = ["Chad"]
+
+if (Math.random() < 0.14) {
+	killYBWO.push("Old age")
+}
 
 if (Math.random() <= 0.69) {
 	targetsYBWO.push("Lorne");
