@@ -77,6 +77,8 @@ var missionList = [showstopper,wot];
 		showstopper();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "WOT") {
 		wot();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "AGC") {
+		agc();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "RANDOM") {
 		missionList[Math.floor(Math.random()*missionList.length)]();
 	} else {
@@ -198,6 +200,83 @@ var contractTargets =["Terenzio Endrizzi","Roberto Vargas","Chef Marcello Ray","
 
 var entry = ["Main Square","ICA Safe House","Harbor","Sapienza Ruins","Main Square Tower","Church Morgue","Mansion Kitchen","Field Lab","Mansion Garden","Security Staff"];
 var exit = ["Car","Speedboat (pier)","Plane","Speedboat (ruins)"];
+
+function createKillList() {
+	if (document.getElementById("melee").checked == 1) {
+		for (i = 0; i < melee.length; i++) {
+			allKills.push(melee[i])
+		}
+	}
+	if (document.getElementById("firearm").checked == 1) {
+		for (i = 0; i < firearms.length; i++) {
+			allKills.push(firearms[i])
+		}
+	}
+	if (document.getElementById("generic").checked == 0) {
+		for (i = 0; i < genericKills.length; i++) {
+			allKills.push(genericKills[i])
+		}
+	}
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+		allKills.push("???");
+	}
+}
+createKillList();
+
+result.mission = "World of Tomorrow";
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+
+if (document.getElementById("contracts").checked == 0) {
+	result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+} else {
+	for (i = 0; i < contractTargets.length; i++) {
+		targetList.push(contractTargets[i]);
+	}
+	
+	shuffle(targetList);
+	var targetAmountCheck = Math.random()
+	
+		result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	if (targetAmountCheck > 0.19) {
+		result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.54) {
+		result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.84) {
+		result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.94) {
+		result.kill5 = targetList[4].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+}
+
+removeUndefined();
+
+document.getElementById("chosenmission").innerHTML = result.mission;
+document.getElementById("start").innerHTML = result.start;
+document.getElementById("kill1").innerHTML = result.kill1;
+document.getElementById("kill2").innerHTML = result.kill2;
+document.getElementById("kill3").innerHTML = result.kill3;
+document.getElementById("kill4").innerHTML = result.kill4;
+document.getElementById("kill5").innerHTML = result.kill5;
+document.getElementById("exit").innerHTML = result.exit;
+
+}
+
+function agc() {
+	
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife"];
+var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+
+var targetList = ["Claus Hugo Strandberg","Reza Zaydan"];
+var contractTargets =["Ashraf Raghib Mustafa","Jeff Baker","Shahin Abdul-Barr Maalouf","Konny Engström","Jawwaad Reza"];
+
+var entry = ["Bazaar Entrance","Undercover at the Snail Stand","Undercover on the West Bazaar Rooftop","Undercover in the Courtyard Club","Undercover in Zaydan's Compound","Lamp Store Rooftop","Undercover in the Consulate","Scool Alley","Consulate Parking Garage"];
+var exit = ["Bazaar gates","Armored Vehicle","Car in the garage"];
 
 function createKillList() {
 	if (document.getElementById("melee").checked == 1) {
