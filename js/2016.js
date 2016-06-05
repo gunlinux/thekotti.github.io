@@ -300,7 +300,7 @@ function createKillList() {
 }
 createKillList();
 
-result.mission = "World of Tomorrow";
+result.mission = "A Gilded Cage";
 result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
 result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
 
