@@ -71,7 +71,7 @@ document.getElementById("themeswitch").onclick = function(){
 function chooseMission() {
 
 var mission = document.getElementById("missionselect").selectedIndex;
-var missionList = [showstopper,wot];
+var missionList = [showstopper,wot,agc];
 
 	if ((document.getElementsByTagName("option")[mission].value) === "TSS") {
 		showstopper();
