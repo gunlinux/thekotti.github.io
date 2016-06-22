@@ -109,6 +109,10 @@ if (Math.random() < 0.09) {
 	result.extra5 = (document.getElementById("extra5").innerHTML = "Do not climb pipes.")
 }
 
+if (Math.random() < 0.04) {
+	result.extra5 = (document.getElementById("extra6").innerHTML = "Do not crouch.")
+}
+
 }
 
 function showstopper() {
@@ -269,11 +273,11 @@ document.getElementById("exit").innerHTML = result.exit;
 function agc() {
 	
 var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
-var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife"];
+var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife","Cleaver","Letter Opener","Folding Knife"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var targetList = ["Claus Hugo Strandberg","Reza Zaydan"];
-var contractTargets =["Ashraf Raghib Mustafa","Jeff Baker","Shahin Abdul-Barr Maalouf","Konny Engström","Jawwaad Reza"];
+var contractTargets =["Ashraf Raghib Mustafa","Jeff Baker","Shahin Abdul-Barr Maalouf","Konny Engström","Jawwaad Reza","Hektor Lindberg","Zaki Diab","Shuaib Aly","Hilda Berg"];
 
 var entry = ["Bazaar Entrance","Undercover at the Snail Stand","Undercover on the West Bazaar Rooftop","Undercover in the Courtyard Club","Undercover in Zaydan's Compound","Lamp Store Rooftop","Undercover in the Consulate","Scool Alley","Consulate Parking Garage"];
 var exit = ["Bazaar gates","Armored Vehicle","Car in the garage"];
