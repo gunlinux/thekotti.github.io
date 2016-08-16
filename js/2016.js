@@ -20,6 +20,7 @@ function clearAll() {
 	document.getElementById("extra3").innerHTML = "";
 	document.getElementById("extra4").innerHTML = "";
 	document.getElementById("extra5").innerHTML = "";
+	document.getElementById("extra6").innerHTML = "";
 
 };
 
@@ -36,6 +37,18 @@ function removeUndefined() {
 	if ("undefined" === typeof result.kill5) {
 		result.kill5 = "";
 	}
+}
+
+function writeEverything() {
+document.getElementById("chosenmission").innerHTML = result.mission;
+document.getElementById("start").innerHTML = result.start;
+document.getElementById("kill1").innerHTML = result.kill1;
+document.getElementById("kill2").innerHTML = result.kill2;
+document.getElementById("kill3").innerHTML = result.kill3;
+document.getElementById("kill4").innerHTML = result.kill4;
+document.getElementById("kill5").innerHTML = result.kill5;
+document.getElementById("exit").innerHTML = result.exit;
+
 }
 
 function shuffle(array) {
@@ -71,7 +84,7 @@ document.getElementById("themeswitch").onclick = function(){
 function chooseMission() {
 
 var mission = document.getElementById("missionselect").selectedIndex;
-var missionList = [showstopper,wot,agc];
+var missionList = [showstopper,wot,agc,icon,ahbos,c27];
 
 	if ((document.getElementsByTagName("option")[mission].value) === "TSS") {
 		showstopper();
@@ -79,6 +92,12 @@ var missionList = [showstopper,wot,agc];
 		wot();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "AGC") {
 		agc();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "ICON") {
+		icon();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "AHBOS") {
+		ahbos();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "C27") {
+		c27();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "RANDOM") {
 		missionList[Math.floor(Math.random()*missionList.length)]();
 	} else {
@@ -110,7 +129,7 @@ if (Math.random() < 0.09) {
 }
 
 if (Math.random() < 0.04) {
-	result.extra5 = (document.getElementById("extra6").innerHTML = "Do not crouch.")
+	result.extra6 = (document.getElementById("extra6").innerHTML = "Do not crouch.")
 }
 
 }
@@ -182,15 +201,7 @@ if (document.getElementById("contracts").checked == 0) {
 
 removeUndefined();
 
-document.getElementById("chosenmission").innerHTML = result.mission;
-document.getElementById("start").innerHTML = result.start;
-document.getElementById("kill1").innerHTML = result.kill1;
-document.getElementById("kill2").innerHTML = result.kill2;
-document.getElementById("kill3").innerHTML = result.kill3;
-document.getElementById("kill4").innerHTML = result.kill4;
-document.getElementById("kill5").innerHTML = result.kill5;
-document.getElementById("exit").innerHTML = result.exit;
-
+writeEverything();
 }
 
 function wot() {
@@ -259,14 +270,7 @@ if (document.getElementById("contracts").checked == 0) {
 
 removeUndefined();
 
-document.getElementById("chosenmission").innerHTML = result.mission;
-document.getElementById("start").innerHTML = result.start;
-document.getElementById("kill1").innerHTML = result.kill1;
-document.getElementById("kill2").innerHTML = result.kill2;
-document.getElementById("kill3").innerHTML = result.kill3;
-document.getElementById("kill4").innerHTML = result.kill4;
-document.getElementById("kill5").innerHTML = result.kill5;
-document.getElementById("exit").innerHTML = result.exit;
+writeEverything();
 
 }
 
@@ -280,7 +284,7 @@ var targetList = ["Claus Hugo Strandberg","Reza Zaydan"];
 var contractTargets =["Ashraf Raghib Mustafa","Jeff Baker","Shahin Abdul-Barr Maalouf","Konny Engström","Jawwaad Reza","Hektor Lindberg","Zaki Diab","Shuaib Aly","Hilda Berg"];
 
 var entry = ["Bazaar Entrance","Undercover at the Snail Stand","Undercover on the West Bazaar Rooftop","Undercover in the Courtyard Club","Undercover in Zaydan's Compound","Lamp Store Rooftop","Undercover in the Consulate","Scool Alley","Consulate Parking Garage"];
-var exit = ["Bazaar gates","Armored Vehicle","Car in the garage"];
+var exit = ["Bazaar gates","Armored vehicle","Car in the garage"];
 
 function createKillList() {
 	if (document.getElementById("melee").checked == 1) {
@@ -336,17 +340,218 @@ if (document.getElementById("contracts").checked == 0) {
 
 removeUndefined();
 
-document.getElementById("chosenmission").innerHTML = result.mission;
-document.getElementById("start").innerHTML = result.start;
-document.getElementById("kill1").innerHTML = result.kill1;
-document.getElementById("kill2").innerHTML = result.kill2;
-document.getElementById("kill3").innerHTML = result.kill3;
-document.getElementById("kill4").innerHTML = result.kill4;
-document.getElementById("kill5").innerHTML = result.kill5;
-document.getElementById("exit").innerHTML = result.exit;
+writeEverything();
 
 }
 
+function icon() {
+	
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Cleaver","Fire axe","Knife","Screwdriver"];
+var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+
+var targetList = ["Dino Bosco"];
+var contractTargets =["Palmiro Russo","Enrico Nucci","Sophia Wilde","Giuseppe Monaldo","Amaranto 'Tony' Mazzi"];
+
+var entry = ["City gates"];
+var exit = ["Town gate","Bosco's car"];
+
+function createKillList() {
+	if (document.getElementById("melee").checked == 1) {
+		for (i = 0; i < melee.length; i++) {
+			allKills.push(melee[i])
+		}
+	}
+	if (document.getElementById("firearm").checked == 1) {
+		for (i = 0; i < firearms.length; i++) {
+			allKills.push(firearms[i])
+		}
+	}
+	if (document.getElementById("generic").checked == 0) {
+		for (i = 0; i < genericKills.length; i++) {
+			allKills.push(genericKills[i])
+		}
+	}
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+		allKills.push("???");
+	}
+}
+createKillList();
+
+result.mission = "The Icon";
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+
+if (document.getElementById("contracts").checked == 0) {
+	result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+} else {
+	for (i = 0; i < contractTargets.length; i++) {
+		targetList.push(contractTargets[i]);
+	}
+	
+	shuffle(targetList);
+	var targetAmountCheck = Math.random()
+	
+		result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	if (targetAmountCheck > 0.19) {
+		result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.54) {
+		result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.84) {
+		result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.94) {
+		result.kill5 = targetList[4].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+}
+
+removeUndefined();
+
+writeEverything();
+
+}
+
+function ahbos() {
+	
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Cleaver","Folding knife","Kitchen knife","Scissors","Screwdriver"];
+var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+
+var targetList = ["Matthieu Mendola","Kong Tuo-Kwang"];
+var contractTargets =["Yousef Shitrit","Jalal al Din Muti Said","Zaki Diab","Hussein Guirguis","Ahmed Aziz","Jewel Bourgeois"];
+
+var entry = ["Consulate plaza"];
+var exit = ["Bazaar gates","Truck","Door near the well","Door on the street"];
+
+function createKillList() {
+	if (document.getElementById("melee").checked == 1) {
+		for (i = 0; i < melee.length; i++) {
+			allKills.push(melee[i])
+		}
+	}
+	if (document.getElementById("firearm").checked == 1) {
+		for (i = 0; i < firearms.length; i++) {
+			allKills.push(firearms[i])
+		}
+	}
+	if (document.getElementById("generic").checked == 0) {
+		for (i = 0; i < genericKills.length; i++) {
+			allKills.push(genericKills[i])
+		}
+	}
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+		allKills.push("???");
+	}
+}
+createKillList();
+
+result.mission = "A House Built on Sand";
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+
+if (document.getElementById("contracts").checked == 0) {
+	result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+} else {
+	for (i = 0; i < contractTargets.length; i++) {
+		targetList.push(contractTargets[i]);
+	}
+	
+	shuffle(targetList);
+	var targetAmountCheck = Math.random()
+	
+		result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	if (targetAmountCheck > 0.19) {
+		result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.54) {
+		result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.84) {
+		result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.94) {
+		result.kill5 = targetList[4].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+}
+
+removeUndefined();
+
+writeEverything();
+
+}
+
+function c27() {
+	
+var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Kitchen knife","Screwdriver","Fire axe","Cleaver","Hatchet","Letter opener","Katana"];
+var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+
+var targetList = ["Jordan Cross","Ken Morgan"];
+var contractTargets =["Dexy Barat","Max Liston","Heidi Santoro","Toby Hicks","Jackie Carrington","Abel De Silva","Mrs. Mookjai","Tharn Srisai","Julian","Benjamin Bertam","Otis Kaplan"];
+
+var entry = ["Riverside landing","47's suite","Undercover in the restaurant kitchen","Undercover in the linen room","Undercover by the security shed","Undercover at the Himmapa bar","Undercover in the side garden","Undercoverin the 2nd floor hallway"];
+var exit = ["Boat","Tuk-tuk","Tunnel"];
+
+function createKillList() {
+	if (document.getElementById("melee").checked == 1) {
+		for (i = 0; i < melee.length; i++) {
+			allKills.push(melee[i])
+		}
+	}
+	if (document.getElementById("firearm").checked == 1) {
+		for (i = 0; i < firearms.length; i++) {
+			allKills.push(firearms[i])
+		}
+	}
+	if (document.getElementById("generic").checked == 0) {
+		for (i = 0; i < genericKills.length; i++) {
+			allKills.push(genericKills[i])
+		}
+	}
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+		allKills.push("???");
+	}
+}
+createKillList();
+
+result.mission = "Club 27";
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+
+if (document.getElementById("contracts").checked == 0) {
+	result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+} else {
+	for (i = 0; i < contractTargets.length; i++) {
+		targetList.push(contractTargets[i]);
+	}
+	
+	shuffle(targetList);
+	var targetAmountCheck = Math.random()
+	
+		result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	if (targetAmountCheck > 0.19) {
+		result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.54) {
+		result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.84) {
+		result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.94) {
+		result.kill5 = targetList[4].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+}
+
+removeUndefined();
+
+writeEverything();
+
+}
 
 function test() {
 	console.log(allKills)
