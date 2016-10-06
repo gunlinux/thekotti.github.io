@@ -145,6 +145,7 @@ function showstopper() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Screwdriver","Letter Opener","Scissors","Kitchen Knife","Fiber Wire","Fire Axe","Battle Axe","Saber","Hatchet"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Viktor Novikov","Dalia Margolis"];
 var contractTargets =["Sebastian Sato","Helmut Kruger","Max Decker","Sheik Salman Al-Ghazali","Liza McKenzie","Hailey Brennan","Kurt Donovan","Sophus Fatale"];
@@ -163,12 +164,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
@@ -215,6 +221,7 @@ function wot() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Saber","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Silvio Caruso","Francesca De Santis"];
 var contractTargets =["Terenzio Endrizzi","Roberto Vargas","Chef Marcello Ray","Luigi Saltatore","Dr. Oscar Lafayette","Torres Piombo","Sal Falcone","Viana Buccho","Fabio Pavione","Mario Saltatore"];
@@ -233,12 +240,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
@@ -285,6 +297,7 @@ function agc() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife","Cleaver","Letter Opener","Folding Knife","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Claus Hugo Strandberg","Reza Zaydan"];
 var contractTargets =["Ashraf Raghib Mustafa","Jeff Baker","Shahin Abdul-Barr Maalouf","Konny Engström","Jawwaad Reza","Hektor Lindberg","Zaki Diab","Shuaib Aly","Hilda Berg"];
@@ -303,12 +316,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
@@ -355,6 +373,7 @@ function icon() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Cleaver","Fire axe","Knife","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Dino Bosco"];
 var contractTargets =["Palmiro Russo","Enrico Nucci","Sophia Wilde","Giuseppe Monaldo","Amaranto 'Tony' Mazzi"];
@@ -373,12 +392,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
@@ -424,6 +448,7 @@ function ahbos() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Cleaver","Folding knife","Kitchen knife","Scissors","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Matthieu Mendola","Kong Tuo-Kwang"];
 var contractTargets =["Yousef Shitrit","Jalal al Din Muti Said","Zaki Diab","Hussein Guirguis","Ahmed Aziz","Jewel Bourgeois"];
@@ -442,12 +467,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
@@ -494,6 +524,7 @@ function c27() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Kitchen knife","Screwdriver","Fire axe","Cleaver","Hatchet","Letter opener","Katana","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Jordan Cross","Ken Morgan"];
 var contractTargets =["Dexy Barat","Max Liston","Heidi Santoro","Toby Hicks","Jackie Carrington","Abel De Silva","Mrs. Mookjai","Tharn Srisai","Julian","Benjamin Bertam","Otis Kaplan"];
@@ -512,12 +543,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
@@ -564,6 +600,7 @@ function ff() {
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Cleaver","Old Axe","Kitchen Knife","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"];
 
 var targetList = ["Sean Rose","Penelope Graves","Ezra Berg","Maya Parvati"];
 var contractTargets =[];
@@ -582,12 +619,17 @@ function createKillList() {
 			allKills.push(firearms[i])
 		}
 	}
+	if (document.getElementById("accident").checked == 1) {
+		for (i = 0; i < accidents.length; i++) {
+			allKills.push(accidents[i])
+		}
+	}
 	if (document.getElementById("generic").checked == 0) {
 		for (i = 0; i < genericKills.length; i++) {
 			allKills.push(genericKills[i])
 		}
 	}
-	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("accident").checked == 0 && document.getElementById("generic").checked == 1) {
 		allKills.push("???");
 	}
 }
