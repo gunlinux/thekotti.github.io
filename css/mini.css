@@ -39,3 +39,8 @@
 	margin-top: 1px;
 	margin-bottom: 1px;
 }
+
+#info {
+	color: green;
+	padding-top: 15px;
+}

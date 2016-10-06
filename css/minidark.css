@@ -55,3 +55,8 @@ p {
 #filters {
 	color:white;
 }
+
+#info {
+	color: green;
+	padding-top: 15px;
+}

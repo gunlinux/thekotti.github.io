@@ -69,3 +69,8 @@ section h3 {
 .linkki {
 	color:blue;
 }
+
+#info {
+	color: green;
+	padding-top: 15px;
+}

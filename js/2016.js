@@ -37,6 +37,9 @@ function removeUndefined() {
 	if ("undefined" === typeof result.kill5) {
 		result.kill5 = "";
 	}
+	if ("undefined" === typeof result.info) {
+		result.info = "";
+	}
 }
 
 function writeEverything() {
@@ -48,6 +51,7 @@ document.getElementById("kill3").innerHTML = result.kill3;
 document.getElementById("kill4").innerHTML = result.kill4;
 document.getElementById("kill5").innerHTML = result.kill5;
 document.getElementById("exit").innerHTML = result.exit;
+document.getElementById("info").innerHTML = result.info;
 
 }
 
@@ -98,6 +102,8 @@ var missionList = [showstopper,wot,agc,icon,ahbos,c27];
 		ahbos();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "C27") {
 		c27();
+	} else if ((document.getElementsByTagName("option")[mission].value) === "FF") {
+		ff();
 	} else if ((document.getElementsByTagName("option")[mission].value) === "RANDOM") {
 		missionList[Math.floor(Math.random()*missionList.length)]();
 	} else {
@@ -136,7 +142,7 @@ if (Math.random() < 0.04) {
 
 function showstopper() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Screwdriver","Letter Opener","Scissors","Kitchen Knife","Fiber Wire","Fire Axe","Battle Axe","Saber","Hatchet"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
@@ -206,8 +212,8 @@ writeEverything();
 
 function wot() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
-var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Saber","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver"];
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Saber","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var targetList = ["Silvio Caruso","Francesca De Santis"];
@@ -276,8 +282,8 @@ writeEverything();
 
 function agc() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
-var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife","Cleaver","Letter Opener","Folding Knife"];
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife","Cleaver","Letter Opener","Folding Knife","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var targetList = ["Claus Hugo Strandberg","Reza Zaydan"];
@@ -346,8 +352,8 @@ writeEverything();
 
 function icon() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
-var melee = ["Battle Axe","Cleaver","Fire axe","Knife","Screwdriver"];
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Cleaver","Fire axe","Knife","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var targetList = ["Dino Bosco"];
@@ -415,8 +421,8 @@ writeEverything();
 
 function ahbos() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
-var melee = ["Battle Axe","Cleaver","Folding knife","Kitchen knife","Scissors","Screwdriver"];
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Battle Axe","Cleaver","Folding knife","Kitchen knife","Scissors","Screwdriver","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var targetList = ["Matthieu Mendola","Kong Tuo-Kwang"];
@@ -485,14 +491,14 @@ writeEverything();
 
 function c27() {
 	
-var genericKills = ["Firearm (small)","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
-var melee = ["Kitchen knife","Screwdriver","Fire axe","Cleaver","Hatchet","Letter opener","Katana"];
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Kitchen knife","Screwdriver","Fire axe","Cleaver","Hatchet","Letter opener","Katana","Fiber Wire"];
 var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
 
 var targetList = ["Jordan Cross","Ken Morgan"];
 var contractTargets =["Dexy Barat","Max Liston","Heidi Santoro","Toby Hicks","Jackie Carrington","Abel De Silva","Mrs. Mookjai","Tharn Srisai","Julian","Benjamin Bertam","Otis Kaplan"];
 
-var entry = ["Riverside landing","47's suite","Undercover in the restaurant kitchen","Undercover in the linen room","Undercover by the security shed","Undercover at the Himmapa bar","Undercover in the side garden","Undercoverin the 2nd floor hallway"];
+var entry = ["Riverside landing","47's suite","Undercover in the restaurant kitchen","Undercover in the linen room","Undercover by the security shed","Undercover at the Himmapan bar","Undercover in the side garden","Undercoverin the 2nd floor hallway"];
 var exit = ["Boat","Tuk-tuk","Tunnel"];
 
 function createKillList() {
@@ -545,6 +551,84 @@ if (document.getElementById("contracts").checked == 0) {
 	if (targetAmountCheck > 0.94) {
 		result.kill5 = targetList[4].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
 	}
+}
+
+removeUndefined();
+
+writeEverything();
+
+}
+
+function ff() {
+	
+var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
+var melee = ["Cleaver","Old Axe","Kitchen Knife","Screwdriver","Fiber Wire"];
+var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+
+var targetList = ["Sean Rose","Penelope Graves","Ezra Berg","Maya Parvati"];
+var contractTargets =[];
+
+var entry = ["Undercover in the Garage","West Bridge","Undercover by the Greenhouse","Undercover on the Demolision Range","Old Orchard","Southern Farm Perimeter","Undercover in the Farmhouse","Water Tower"];
+var exit = ["Bridge","Quad Bike","River","Front Gate","Tornado Shelter"];
+
+function createKillList() {
+	if (document.getElementById("melee").checked == 1) {
+		for (i = 0; i < melee.length; i++) {
+			allKills.push(melee[i])
+		}
+	}
+	if (document.getElementById("firearm").checked == 1) {
+		for (i = 0; i < firearms.length; i++) {
+			allKills.push(firearms[i])
+		}
+	}
+	if (document.getElementById("generic").checked == 0) {
+		for (i = 0; i < genericKills.length; i++) {
+			allKills.push(genericKills[i])
+		}
+	}
+	if (document.getElementById("melee").checked == 0 && document.getElementById("firearm").checked == 0 && document.getElementById("generic").checked == 1) {
+		allKills.push("???");
+	}
+}
+createKillList();
+
+result.mission = "Freedom Fighters";
+result.start = "<span id='blue'>Start: </span>".fontcolor("blue") + entry[Math.floor(Math.random()*entry.length)]
+result.exit = "<span id='blue'>Escape: </span>".fontcolor("blue") + exit[Math.floor(Math.random()*exit.length)]
+result.info = "To gain access to the exits, recreate the mission in Contracts mode.";
+
+if (document.getElementById("contracts").checked == 0) {
+	result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+} else {
+	result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	result.kill5 = "Contracts mode is not currently supported for this mission".fontcolor("green");
+/*	for (i = 0; i < contractTargets.length; i++) {
+		targetList.push(contractTargets[i]);
+	}
+	
+	shuffle(targetList);
+	var targetAmountCheck = Math.random()
+	
+		result.kill1 = targetList[0].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	if (targetAmountCheck > 0.19) {
+		result.kill2 = targetList[1].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.54) {
+		result.kill3 = targetList[2].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.84) {
+		result.kill4 = targetList[3].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}
+	if (targetAmountCheck > 0.94) {
+		result.kill5 = targetList[4].fontcolor("red") + ": " + allKills[Math.floor(Math.random()*allKills.length)];
+	}*/
 }
 
 removeUndefined();
