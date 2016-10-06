@@ -144,7 +144,7 @@ function showstopper() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Screwdriver","Letter Opener","Scissors","Kitchen Knife","Fiber Wire","Fire Axe","Battle Axe","Saber","Hatchet"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Viktor Novikov","Dalia Margolis"];
@@ -220,7 +220,7 @@ function wot() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Old Axe","Katana","Fire Axe","Saber","Amputation Knife","Circumcision Knife","Combat Knife","Hatchet","Kitchen Knife","Letter Opener","Screwdriver","Fiber Wire"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Silvio Caruso","Francesca De Santis"];
@@ -296,7 +296,7 @@ function agc() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Fire Axe","Saber","Scissors","Screwdriver","Kitchen Knife","Cleaver","Letter Opener","Folding Knife","Fiber Wire"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Claus Hugo Strandberg","Reza Zaydan"];
@@ -372,7 +372,7 @@ function icon() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Cleaver","Fire axe","Knife","Screwdriver","Fiber Wire"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Dino Bosco"];
@@ -447,7 +447,7 @@ function ahbos() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Battle Axe","Cleaver","Folding knife","Kitchen knife","Scissors","Screwdriver","Fiber Wire"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Matthieu Mendola","Kong Tuo-Kwang"];
@@ -523,7 +523,7 @@ function c27() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Kitchen knife","Screwdriver","Fire axe","Cleaver","Hatchet","Letter opener","Katana","Fiber Wire"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"]
 
 var targetList = ["Jordan Cross","Ken Morgan"];
@@ -599,7 +599,7 @@ function ff() {
 	
 var genericKills = ["Pistol","Firearm (large)","Melee Weapon (small)","Melee Weapon (large)","Accident","Explosion","Poison"];
 var melee = ["Cleaver","Old Axe","Kitchen Knife","Screwdriver","Fiber Wire"];
-var firearms = ["Pistol","Sniper","Explosion","Any Large/Loud Weapon"];
+var firearms = ["Pistol","Sniper","Explosive (Weapon)","Any Large/Loud Weapon"];
 var accidents = ["Drowning","Falling Object","Fall","Fire","Electricity","Explosion (Accident)"];
 
 var targetList = ["Sean Rose","Penelope Graves","Ezra Berg","Maya Parvati"];
