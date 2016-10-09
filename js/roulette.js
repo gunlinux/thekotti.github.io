@@ -36,9 +36,9 @@ function shuffle(array) {
 //For popout
 document.getElementById("themeswitch").onclick = function(){
 	var theme = document.getElementById("theme_css");
-	if (theme.href.match("mini.css")) {
+	if (theme.href.match("BMmini.css")) {
 		theme.href = "css/minidark.css";
-	} else if (theme.href.match = "minidark.css") {
+	} else if (theme.href.match = "BMminidark.css") {
 		theme.href = "css/mini.css";
 	}
 }

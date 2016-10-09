@@ -3,7 +3,7 @@
 	<head lang="en">
 		<title>Hitman Roulette</title>
 		<link rel="stylesheet" href="css/mini.css" type="text/css" id="theme_css" />
-		<meta charset="utf-8">		
+		<meta charset="utf-8">
 	</head>
 	
 	<body>
@@ -20,8 +20,8 @@
 					<option value="C27">Club 27</option>
 					<option value="FF">Freedom Fighters</option>
 				</select>
-				<button type="button" style="display:inline" onclick="clearAll(),chooseMission(),extras(),test()">Make it go</button>
-				<button type="button" id="filterbutton" style="display:inline" onclick="showFilters()">Show options</button>
+				<button type="button" class="nappi" onclick="literallyEverything()">Make it go</button>
+				<button type="button" id="filterbutton" class="nappi" onclick="showFilters()">Show options</button>
 				<br>
 				<div id="filters" style="display:none">
 				<input type="checkbox" id="melee" value="true">Specific melee weapons
@@ -33,31 +33,42 @@
 				<input type="checkbox" id="generic" value="true">Remove generic kills
 				<br>
 				<input type="checkbox" id="contracts" value="true">Contracts mode
-				<a id="contractinfonappi" href="roulettemini.html"  onclick="window.open('contracts.html', '_blank', 'width=350, height=600, scrollbars=yes'); return false;">(target info)</a>
+				<a id="contractinfonappi" href="roulettemini.html"  onclick="window.open('contracts.html', 'newwindow', 'width=450, height=600'); return false;">(target info)</a>
+				<br>
 				</div>
 
-				<p id="chosenmission" class="allresults"></p>
-				<div id="resultsection2016">
-				<p id="start" class="allresults"></p>
-				<p id="kill1" class="allresults"></p>
-				<p id="kill2" class="allresults"></p>
-				<p id="kill3" class="allresults"></p>
-				<p id="kill4" class="allresults"></p>
-				<p id="kill5" class="allresults"></p>
-				<p id="exit" class="allresults"></p><br>
-				<p id="extra1" class="allresults" class="genericextras"></p>
-				<p id="extra2" class="allresults" class="genericextras"></p>
-				<p id="extra3" class="allresults" class="genericextras"></p>
-				<p id="extra4" class="allresults" class="genericextras"></p>
-				<p id="extra5" class="allresults" class="genericextras"></p>
-				<p id="extra6" class="allresults" class="genericextras"></p>
-				<p id="testi"></p>
+				<p id="chosenmission"></p>
+				<section id="resultsection">
+				<p id="start"></p>
+				<p id="kill1"></p>
+				<p id="kill2"></p>
+				<p id="kill3"></p>
+				<p id="kill4"></p>
+				<p id="kill5"></p>
+				<p id="exit"></p><br>
+				<p id="extra1" class="extras"></p>
+				<p id="extra2" class="extras"></p>
+				<p id="extra3" class="extras"></p>
+				<p id="extra4" class="extras"></p>
+				<p id="extra5" class="extras"></p>
+				<p id="extra6" class="extras"></p>
 				<p id="info"></p>
-				</div>
+				</section>
 				
 				<a id="themeswitch" href="#">Switch theme</a>
 
-				<script src="js/2016.js"></script>
+				<script src="js/2016new.js"></script>
+				<script src="js/2016new2.js"></script> 
+				<script>
+				document.getElementById("themeswitch").onclick = function(){
+					var theme = document.getElementById("theme_css");
+					if (theme.href.match("css/mini.css")) {
+						theme.href = "css/minidark.css";
+					} else if (theme.href.match = "css/minidark.css") {
+						theme.href = "css/mini.css";
+					}
+				}
+				</script>
 
 		</section>
 		

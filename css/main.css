@@ -54,6 +54,9 @@ footer a {
 	color:#0066cc;
 }
 
+#changelog {
+	display: none;
+}
 section h3 {
 	color:#cc0000;
 }
@@ -64,6 +67,7 @@ section h3 {
 
 .versionnumber {
 	font-weight:bold;
+	margin-top: 12px;
 }
 
 .linkki {

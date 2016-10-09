@@ -10,6 +10,18 @@ p {
 	color:white;
 }
 
+#roulettesection {
+	
+}
+
+.genericextras,#extra1,#extra2,#extra3,#extra4,#extra5,#extra6 {
+	color:#00ccff;
+}
+
+.missionextras {
+	color:red;
+}
+
 #chosenmission {
 	font-size:18px;
 	font-weight: bold;
@@ -23,49 +35,28 @@ p {
 	font-size:10px;
 }
 
-#resultsection {
-	line-height:1.2;
-	margin-top:20px;
-	border: none;
-	padding: 0;
-	margin: 0;
+#blue {
+	color:#00ccff;
 }
 
-#resultsection p {
+#mainresult #green {
+	color:#00ff00
+}
+
+#resultsection2016 {
+	line-height:1.2;
+	margin-top:20px;
+}
+
+#resultsection2016 p {
 	margin-top: 1px;
 	margin-bottom: 1px;
 }
-
 #filters {
 	color:white;
-	display: none;
 }
 
 #info {
 	color: green;
 	padding-top: 15px;
-}
-
-.bluetext {
-	margin: 0;
-	padding: 0;
-	color: #00ccff;
-	display: inline;
-}
-
-.redtext {
-	margin: 0;
-	padding: 0;
-	color: red;
-	display: inline;
-}
-
-.extras {
-	margin: 0;
-	padding: 0;
-	color: #00ccff;
-}
-
-.nappi {
-	display: inline;
 }
