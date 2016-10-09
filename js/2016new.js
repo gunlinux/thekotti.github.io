@@ -91,6 +91,7 @@ function clearAll() {
 	killList = [];
 	container = {};
 	result = {};
+	document.getElementById("info").innerHTML = "";
 };
 
 //Hides unused html elements that appear in some results
@@ -256,7 +257,6 @@ function literallyEverything() {
 	extras();
 	writeEverything();
 	removeUndefined();
-	console.log(container.targetList);
 };
 
 //Displays/hides the options
